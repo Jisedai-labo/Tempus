@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: "Hey!"
+  language: "Ruby"
+  user_id: 1
+
+two:
+  content: "Good!"
+  language: "Python"
+  user_id: 2
