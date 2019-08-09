@@ -41,6 +41,8 @@ gem 'bootstrap-sass'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'mini_magick'
+gem 'ruby-debug-ide'
+gem 'debase'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
