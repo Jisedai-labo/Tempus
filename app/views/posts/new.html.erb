@@ -1,0 +1,10 @@
+<%= form_for(@post) do |f| %>
+<!-- object: f.objectは@user,@micropostを扱う=関連づけられたモデルを両方扱うために指定する-->
+  <div class="field">
+    <%= f.text_area :content, placeholder: "Compose new micropost..." %>
+  </div>
+  <div class="field">
+    <%= f.text_area :language, placeholder: "Compose new micropost..." %>
+  </div>
+  <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>
