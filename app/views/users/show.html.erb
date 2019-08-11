@@ -1,0 +1,19 @@
+<h1>User</h1>
+<p>Name</p>
+<%= @user.name%>
+<p>Username</p>
+<%= @user.username%>
+<p>Twitter Account</p>
+<%= @user.twitter_account %>
+<p>github</p>
+<%= @user.github%>
+<p>Biography</p>
+<%= @user.biography %>
+
+<div>
+<%= link_to "Index" , users_path %>
+</div>
+
+<div>
+<%= link_to "Edit" , edit_user_path(current_user)%>
+</div>
