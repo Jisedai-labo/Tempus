@@ -1,0 +1,23 @@
+<h1>User</h1>
+<%= form_for(@user) do |f| %>
+ 
+      <h4>Name</h4>
+      <%= f.text_field :name %>
+ 
+      <h4>Username</h4>
+      <%= f.text_field :username %>
+
+      <h4>Twitter Account</h4>
+      <%= f.text_field :twitter_account %>
+
+      <h4>GitHub</h4>
+      <%= f.text_field :github %>
+
+      <h4>Biography</h4>
+      <%= f.text_area :biography %>
+ 
+      <div>
+      <%= f.submit 'UPDATE USER' %>
+      </div>
+
+<% end%>
