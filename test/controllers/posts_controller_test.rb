@@ -3,7 +3,7 @@ require 'test_helper'
 class PostsControllerTest < ActionDispatch::IntegrationTest
   
   def setup
-    @post = post(:one)
+    @post = posts(:one)
   end
 
   test "should be logged in" do

@@ -5,12 +5,12 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.posts.build(post_params)
+    @post = current_user.posts.new(post_params)
     if @post.save
       flash[:notice] = "投稿しました"
-      redirect_to user_url
+      redirect_to user_url(current_user)
     else
-      render 'posts/new'
+      render 'home/home'
     end
   end
   
@@ -23,7 +23,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @post = current_user.posts.update_attributes(post_params)
+    if @post == current_user.posts.update_attributes(post_params)
       flash[:notice] = "編集が完了しました"
       redirect_to user_url
     else
