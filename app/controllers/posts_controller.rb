@@ -4,13 +4,19 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def index
+    @posts = Post.all
+  end
+
   def create
-    @post = current_user.posts.new(post_params)
+    @post = Post.new(post_params)
+    @post.user_id = current_user.id
     if @post.save
       flash[:notice] = "投稿しました"
-      redirect_to user_url(current_user)
+      redirect_to posts_path
     else
-      render 'home/home'
+      @posts = Post.all
+      render :index
     end
   end
   
@@ -30,10 +36,6 @@ class PostsController < ApplicationController
     end
   end
 
-  def index
-    @post = Post.all
-  end
-
   def destroy
     @post.destroy
     flash[:notice] = "投稿が削除されました"
@@ -43,6 +45,6 @@ class PostsController < ApplicationController
     private
 
       def post_params
-        params.require(:post).permit(:content, :language)
+        params.require(:post).permit(:content, :language, :user_id)
       end
 end
