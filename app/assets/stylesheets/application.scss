@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "bootstrap";
+ 
+ header{
+  position: fixed;
+ }
+ 
+ .header-right{
+     float: right;
+ }
+ 
+ .button-link{
+  color: #222222;
+ }
+
+ .container{
+     margin-top: 100px;
+ }
