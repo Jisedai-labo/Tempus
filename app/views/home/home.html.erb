@@ -6,6 +6,10 @@ Tempus
 <p>Tempusは次世代ラボのメンバーが学習時間を報告・管理するためのwebアプリです</p>
 </div>
 
+<% if current_user != nil %>
+<div><%= current_user.email %>はログイン中</div>
+<% end %>
+
 <div>
 <%= link_to "登録", new_user_path %>
 </div>

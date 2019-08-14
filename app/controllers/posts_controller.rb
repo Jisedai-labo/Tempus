@@ -15,15 +15,14 @@ class PostsController < ApplicationController
   end
   
   def show
-    @post = Post.where(user_id: current_user.id)
   end
 
   def edit
-    
   end
 
   def update
-    if @post == current_user.posts.update_attributes(post_params)
+    @post == current_user.posts.update(post_params)
+    if @post.save
       flash[:notice] = "編集が完了しました"
       redirect_to user_url
     else
