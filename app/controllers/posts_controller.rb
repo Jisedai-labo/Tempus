@@ -1,7 +1,9 @@
 class PostsController < ApplicationController
+before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def new
     @post = Post.new
+    @studytime = @post.build_studytime
   end
 
   def index
@@ -9,9 +11,10 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
-    @post.user_id = current_user.id
-    if @post.save
+    @post = current_user.posts.new(post_params)
+    @studytime = @post.build_studytime(studytime_params)
+    @studytime.post_id = @post.id
+    if @post.save && @studytime.save
       flash[:notice] = "投稿しました"
       redirect_to posts_path
     else
@@ -30,7 +33,7 @@ class PostsController < ApplicationController
     @post == current_user.posts.update(post_params)
     if @post.save
       flash[:notice] = "編集が完了しました"
-      redirect_to user_url
+      redirect_to posts_path
     else
       render 'posts/edit'
     end
@@ -45,6 +48,14 @@ class PostsController < ApplicationController
     private
 
       def post_params
-        params.require(:post).permit(:content, :language, :user_id)
+        params.require(:post).permit(:language, :kyouzai, :content)
+      end
+
+      def studytime_params
+        params.require(:studytime).permit(:studytime)
+      end
+
+      def set_post
+        @post = Post.find(params[:id])
       end
 end
