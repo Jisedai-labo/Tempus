@@ -65,7 +65,7 @@ $(function(){
         clearTimeout(timerId);
         stopTime = new Date();
         studyTime += parseInt((stopTime - startTime) / 1000);
-        // $('input:hidden[name="studytime"]').val(studyTime); // 隠しパラメータとして勉強時間を渡す
+        $('input:hidden[name="studytime"]').val(studyTime); // 隠しパラメータとして勉強時間を渡す
       }
     });
 
