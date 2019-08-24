@@ -1,7 +1,7 @@
 $(function(){
     'use strict';
 
-    var start = document.getElementById('start'); // startボタンを取得
+    var start = $('#start').get(0); // startボタンを取得
 
     var studyTime = 0; // 勉強時間
 
@@ -63,11 +63,14 @@ $(function(){
         isRunning = false;
         start.textContent = 'Start';
         clearTimeout(timerId);
-        stopTime = new Date();
-        studyTime += parseInt((stopTime - startTime) / 1000);
-        // $('input:hidden[name="studytime"]').val(studyTime); // 隠しパラメータとして勉強時間を渡す
+        
+        if(startTime){
+          stopTime = new Date();
+          studyTime += parseInt((stopTime - startTime) / 1000);
+          $('#post_studytime').val(studyTime); // 隠しパラメータとして勉強時間を渡す
+        }
       }
     });
 
-  })();
+  });
   
