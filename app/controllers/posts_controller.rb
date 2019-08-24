@@ -12,9 +12,7 @@ before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def create
     @post = current_user.posts.new(post_params)
-    @studytime = @post.build_studytime(studytime_params)
-    @studytime.post_id = @post.id
-    if @post.save && @studytime.save
+    if @post.save
       flash[:notice] = "投稿しました"
       redirect_to posts_path
     else
@@ -48,11 +46,7 @@ before_action :set_post, only: [:show, :edit, :update, :destroy]
     private
 
       def post_params
-        params.require(:post).permit(:language, :kyouzai, :content)
-      end
-
-      def studytime_params
-        params.require(:studytime).permit(:studytime)
+        params.require(:post).permit(:language, :kyouzai, :content, studytime_attributes: [:studytime])
       end
 
       def set_post
