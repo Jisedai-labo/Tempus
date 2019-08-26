@@ -1,13 +1,14 @@
-$(function(){
+$(document).on('turbolinks:load', function(){
     'use strict';
-
-    var start = $('#start').get(0); // startボタンを取得
+    
+    var start = document.getElementById('start'); // startボタンを取得
 
     var studyTime = 0; // 勉強時間
 
     var startTime;
     var stopTime;
     var timerId;
+    var date;
 
     var now;
     var hour;
@@ -67,7 +68,8 @@ $(function(){
         if(startTime){
           stopTime = new Date();
           studyTime += parseInt((stopTime - startTime) / 1000);
-          $('#post_studytime').val(studyTime); // 隠しパラメータとして勉強時間を渡す
+          date = stopTime.getDate();
+          $('#post_studytime_attributes_studytime').val(studyTime); // 隠しパラメータとして勉強時間を渡す
         }
       }
     });

@@ -6,18 +6,20 @@
 
   <div class="field">
     <%= f.label :language, "言語" %>
-    <%= f.text_area :language%>
+    <%= f.text_area :language %>
   </div>
   <div class="field">
     <%= f.label :kyouzai, "教材" %>
-    <%= f.text_area :kyouzai%>
+    <%= f.text_area :kyouzai %>
   </div>
   <div class="field">
     <%= f.label :comment, "コメント" %>
-    <%= f.text_area :content%>
+    <%= f.text_area :content %>
   </div>
+  
     <%= f.fields_for :studytime do |study_f| %>
-        <%= f.hidden_field :studytime, :value => 0 %>
+        <%= study_f.hidden_field :studytime, :value => 0 %>
     <% end %>
+
     <%= f.submit "投稿", class: "btn btn-primary" %>
 <% end %>

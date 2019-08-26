@@ -25,6 +25,7 @@ before_action :set_post, only: [:show, :edit, :update, :destroy]
   end
 
   def edit
+    @post = Post.find(params[:id])
   end
 
   def update
@@ -33,20 +34,21 @@ before_action :set_post, only: [:show, :edit, :update, :destroy]
       flash[:notice] = "編集が完了しました"
       redirect_to posts_path
     else
-      render 'posts/edit'
+      render :edit
     end
   end
 
   def destroy
     @post.destroy
     flash[:notice] = "投稿が削除されました"
-    redirect_to user_url
+    redirect_to posts_path
   end
 
     private
 
       def post_params
-        params.require(:post).permit(:language, :kyouzai, :content, studytime_attributes: [:studytime])
+        params.require(:post).permit(:language, :kyouzai, :content,
+                                      studytime_attributes: [:studytime])
       end
 
       def set_post

@@ -1,8 +1,15 @@
 <h1>Post</h1>
 
-<% @posts.each do |post| %>
-<p>Content</p>
-<%= post.content%>
-<p>Language</p>
-<%= post.language %>
-<% end%>
+<div class="posts-index">
+  <% @posts.each do |post| %>
+  <div class="post-contents">
+    <p>Language: <%= post.language %></p>
+    <p>Kyouzai: <%= post.kyouzai %></p>
+    <p>Content: <%= post.content%></p>
+        <% if post.user_id == current_user.id %>
+          <%= link_to "編集", edit_post_path(post) %>
+          <%= link_to "削除", post, method: :delete %>
+        <% end %>
+  </div>
+  <% end %>
+</div>
