@@ -2,7 +2,6 @@
 <div id="timer">00h00m00s</div>
 <button id="start" class="btn btn-primary">Start</button>
 <%= form_with model: @post, local: true do |f| %>
-<!-- object: f.objectは@user,@micropostを扱う=関連づけられたモデルを両方扱うために指定する-->
 
   <div class="field">
     <%= f.label :language, "言語" %>
