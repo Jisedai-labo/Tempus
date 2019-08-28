@@ -3,7 +3,6 @@ before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def new
     @post = Post.new
-    @studytime = @post.build_studytime
   end
 
   def index
