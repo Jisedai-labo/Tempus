@@ -1,16 +1,22 @@
 <h1>User</h1>
 
+<table>
 <% @users.each do |user| %>
-<p>Name</p>
-<%= user.name%>
-<p>Username</p>
-<%= user.username %>
-<p>Twitter Account</p>
-<%= user.twitter_account%>
-<p>github</p>
-<%= user.github%>
-<p>Biography</p>
-<%= user.biography %>
+<tr>
+<td>Name</td>
+<td>Username</td>
+<td>Twitter Account</td>
+<td>github</td>
+<td>Biography</td>
+</tr>
+<tr>
+<td><%= user.name%></td>
+<td><%= user.username %></td>
+<td><%= user.twitter_account%></td>
+<td><%= user.github%></td>
+<td><%= user.biography %></td>
+</tr>
 <% end%>
+</table>
 
 <%= link_to "Edit" , edit_user_path(current_user)%>
