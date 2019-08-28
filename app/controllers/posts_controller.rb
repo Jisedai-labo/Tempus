@@ -3,7 +3,6 @@ before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def new
     @post = Post.new
-    @studytime = @post.build_studytime
   end
 
   def index
@@ -47,8 +46,7 @@ before_action :set_post, only: [:show, :edit, :update, :destroy]
     private
 
       def post_params
-        params.require(:post).permit(:language, :kyouzai, :content,
-                                      studytime_attributes: [:studytime])
+        params.require(:post).permit(:language, :kyouzai, :content, :studytime)
       end
 
       def set_post
