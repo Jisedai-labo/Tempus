@@ -1,19 +1,35 @@
-<div><h1>
-Tempus
-</h1></div>
+<div class="container">
+    <div><h1>
+    Tempus
+    </h1></div>
 
-<div>
-<p>Tempusは次世代ラボのメンバーが学習時間を報告・管理するためのwebアプリです</p>
+    <div>
+    <p>Tempusは次世代ラボのメンバーが学習時間を報告・管理するためのwebアプリです</p>
+    </div>
+
+    <% if current_user != nil %>
+    <div><%= link_to current_user.email, user_path(current_user) %>はログイン中</div>
+    <% end %>
+
+<<<<<<< HEAD:app/views/home/home.html.erb
+    <div>
+    <%= link_to "登録", new_user_path %>
+    </div>
+
+    <div>
+    <%= link_to "ログイン", new_user_session_path   %>
+    </div>
 </div>
-
-<% if current_user != nil %>
-<div><%= current_user.email %>はログイン中</div>
-<% end %>
-
+=======
 <div>
 <%= link_to "登録", new_user_registration_path %>
 </div>
 
 <div>
 <%= link_to "ログイン", new_user_session_path   %>
+<<<<<<< HEAD
 </div>  
+=======
+</div> 
+>>>>>>> 07e65ada1109f300e9a81a6a02743b10a9dbc0b1:app/views/users/home.html.erb
+>>>>>>> 34a86bd8714ec143949887186aef8d5171dd0b6d

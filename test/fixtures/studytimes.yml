@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  studytime: 1
+  posted_at: 2019-08-18 23:34:33
+  date: 2019-08-18
+  post_id: 1
+
+two:
+  studytime: 1
+  posted_at: 2019-08-18 23:34:33
+  date: 2019-08-18
+  post_id: 1
