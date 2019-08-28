@@ -47,8 +47,7 @@ before_action :set_post, only: [:show, :edit, :update, :destroy]
     private
 
       def post_params
-        params.require(:post).permit(:language, :kyouzai, :content,
-                                      studytime_attributes: [:studytime])
+        params.require(:post).permit(:language, :kyouzai, :content, :studytime)
       end
 
       def set_post

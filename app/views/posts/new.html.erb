@@ -16,9 +16,7 @@
     <%= f.text_area :content %>
   </div>
   
-    <%= f.fields_for :studytime do |study_f| %>
-        <%= study_f.hidden_field :studytime, :value => 0 %>
-    <% end %>
+  <%= f.hidden_field :studytime, value => 0 %>
 
     <%= f.submit "投稿", class: "btn btn-primary" %>
 <% end %>
