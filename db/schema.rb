@@ -19,12 +19,6 @@ ActiveRecord::Schema.define(version: 2019_08_27_065852) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "kyouzai"
-<<<<<<< HEAD
-  end
-
-  create_table "studytimes", force: :cascade do |t|
-=======
->>>>>>> 0cc2a6ad7705662fb1a90004c291cc46b679f29f
     t.integer "studytime"
   end
 
