@@ -3,14 +3,11 @@
 <div class="posts-index">
   <% @posts.each do |post| %>
   <div class="post-contents">
-    <p>Studytime: <%= "#{post.studytime}.min" %>
+    <p>Studytime: <%= "#{post.studytime/60}min." %>
     <p>Language: <%= post.language %></p>
     <p>Kyouzai: <%= post.kyouzai %></p>
     <p>Content: <%= post.content%></p>
-        <% if post.user_id == current_user.id %>
-          <%= link_to "編集", edit_post_path(post) %>
-          <%= link_to "削除", post, method: :delete %>
-        <% end %>
+    <%= link_to "詳細", post_path(post) %>
   </div>
   <% end %>
 </div>

@@ -69,7 +69,7 @@ $(document).on('turbolinks:load', function(){
           stopTime = new Date();
           studyTime += parseInt((stopTime - startTime) / 1000);
           date = stopTime.getDate();
-          $('#post_studytime_attributes_studytime').val(studyTime); // 隠しパラメータとして勉強時間を渡す
+          $('#post_studytime').val(studyTime); // 隠しパラメータとして勉強時間を渡す
         }
       }
     });
