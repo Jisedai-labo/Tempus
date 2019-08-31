@@ -8,7 +8,6 @@ $(document).on('turbolinks:load', function(){
     var startTime;
     var stopTime;
     var timerId;
-    var date;
 
     var now;
     var hour;
@@ -68,7 +67,6 @@ $(document).on('turbolinks:load', function(){
         if(startTime){
           stopTime = new Date();
           studyTime += parseInt((stopTime - startTime) / 1000);
-          date = stopTime.getDate();
           $('#post_studytime').val(studyTime); // 隠しパラメータとして勉強時間を渡す
         }
       }

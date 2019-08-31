@@ -18,3 +18,18 @@ content = "Good"
 30.times do |m|
   Post.create!(user_id: m%10+1, studytime: m*60, language: language, kyouzai: kyouzai, content: content)
 end
+
+User.create!(email: "xftpt.nonoka@gmail.com", password: "123456", name: "tomoya")
+
+test_user = User.find_by(email: "xftpt.nonoka@gmail.com")
+sample_languages = ["Ruby", "Rails", "Python", "JavaScript"]
+
+21.times do |m|
+  Post.create!(user_id: test_user.id, studytime: m*60*10, language: sample_languages.sample, kyouzai: kyouzai, content: content)
+end
+
+now = Time.now
+test_user.posts.each do |post|
+  post.created_at = now.ago(rand(1..7).days)
+  post.save
+end
