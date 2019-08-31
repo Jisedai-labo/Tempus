@@ -11,6 +11,28 @@
 <%= @user.biography %>
  
 <div>
+<h1>Stats</h1>
+<canvas id="stats" width="500" height="200"></canvas>
+</div>
+
+<div>
+<h2>投稿一覧</h2>
+<div class="posts-index">
+  <% @posts.each do |post| %>
+  <div class="post-contents">
+    <p>Studytime: <%= "#{post.studytime/60}min." %>
+    <p>Language: <%= post.language %></p>
+    <p>Kyouzai: <%= post.kyouzai %></p>
+    <p>Content: <%= post.content%></p>
+        <% if post.user_id == current_user.id %>
+          <%= link_to "編集", edit_post_path(post) %>
+          <%= link_to "削除", post, method: :delete %>
+        <% end %>
+  </div>
+  <% end %>
+</div>
+
+<div>
 <%= link_to "勉強開始！", new_post_path %>
 </div>
 
@@ -22,3 +44,5 @@
 <%= link_to "Edit" , edit_user_path(current_user)%>
 </div> 
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>

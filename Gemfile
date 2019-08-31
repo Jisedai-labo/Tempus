@@ -46,13 +46,14 @@ gem 'debase'
 gem 'chart-js-rails', '~> 0.1.4'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
+gem 'gon'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'sqlite3'
   gem 'rspec-rails'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
 end
 
 group :development do
