@@ -3,6 +3,7 @@
 <table>
 <% @users.each do |user| %>
 <tr>
+<td>Picture</td>
 <td>Name</td>
 <td>Username</td>
 <td>Twitter Account</td>
@@ -10,6 +11,7 @@
 <td>Biography</td>
 </tr>
 <tr>
+<%= attachment_image_tag user, :image, format: 'jpeg', size:"30×30" %>
 <td><%= user.name%></td>
 <td><%= user.username %></td>
 <td><%= user.twitter_account%></td>

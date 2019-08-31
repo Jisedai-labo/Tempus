@@ -1,6 +1,6 @@
 <li id="micropost-<%= @post.id %>">
   <%= #link_to 画像, @opost.user %>
-  <span class="user"><%= link_to @post.user.name, @post.user %></span>
+  <span class="user"><%= link_to @post.user.name, user_path(@post.user) %></span>
   <span class="content">
     <%= @post.content %>
     <%= #image_tag @post.picture.url if @post.picture? %>
