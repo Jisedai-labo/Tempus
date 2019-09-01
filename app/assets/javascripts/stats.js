@@ -16,7 +16,7 @@ $(document).on('turbolinks:load', function(){
             label: "勉強時間",
             backgroundColor: 'rgb(255, 99, 132)',
             borderColor: 'rgb(255, 99, 132)',
-            data: [0, 10, 5, 2, 20, 30, 45],
+            data: [100, 50, 5, 2, 20, 30, 45],
         }]
     },
 
