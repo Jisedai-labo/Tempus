@@ -3,7 +3,7 @@ $(document).on('turbolinks:load', function(){
 
     var ctx = document.getElementById('stats').getContext('2d');
     var studytimes = gon.studytimes;
-    var kyouzai = gon.kyouzai;
+    var language = gon.language;
     
     new Chart(ctx, {
     // 作成したいチャートのタイプ

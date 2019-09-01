@@ -10,15 +10,15 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = Post.where(user_id: params[:id])
-    studytimes = Array.new(7, 0)
-    language = Array.new(7)
+    @studytimes = Array.new(7, 0)
+    @language = Array.new(7)
     today = Time.now.yday
     7.times do |i|
-      studytimes[i] = @posts.map{|post| post.studytime if post.created_at.yday == (today - i)}
-      language[i] = @posts.map{|post| post.language if post.created_at.yday == (today - i)}
+      @studytimes[i] = Post.where(user_id: params[:id]).where(created_at: Time.now.ago(i.days).beginning_of_day..Time.now.ago(i.days).end_of_day).pluck(:studytime)
+      @language[i] = Post.where(user_id: params[:id]).where(created_at: Time.now.ago(i.days).beginning_of_day..Time.now.ago(i.days).end_of_day).pluck(:language)
     end
-    gon.sudytimes = studytimes
-    gon.language = language
+    gon.studytimes = @studytimes
+    gon.language = @language
   end
 
   def edit
