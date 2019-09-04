@@ -9,16 +9,18 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @posts = Post.where(user_id: params[:id])
-    @studytimes = Array.new(7, 0)
-    @language = Array.new(7)
-    today = Time.now.yday
+    @posts = @user.posts
+    language = Language.all.map(&:language)
+    list_of_studytime = Array.new(language.size, Array.new(7, 0))
+    stats = language.zip(list_of_studytime).to_h
     7.times do |i|
-      @studytimes[i] = Post.where(user_id: params[:id]).where(created_at: Time.now.ago(i.days).beginning_of_day..Time.now.ago(i.days).end_of_day).pluck(:studytime)
-      @language[i] = Post.where(user_id: params[:id]).where(created_at: Time.now.ago(i.days).beginning_of_day..Time.now.ago(i.days).end_of_day).pluck(:language)
+      temp = @posts.where(created_at: Time.current.ago(i.days).beginning_of_day..Time.current.ago(i.days).end_of_day).pluck(:language, :studytime).to_h
+      
+      stats.each do |key, value|
+        value[i] = temp[key] if temp[key]
+      end
     end
-    gon.studytimes = @studytimes
-    gon.language = @language
+    gon.stats = stats
   end
 
   def edit
