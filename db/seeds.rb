@@ -35,7 +35,7 @@ language = Language.all.pluck(:language)
 end
 
 21.times do |m|
-  Post.create!(user_id: test_user.id, studytime: m*60, language: language[m%10], kyouzai: kyouzai, content: content)
+  Post.create!(user_id: test_user.id, studytime: m*60, language: language[m%4], kyouzai: kyouzai, content: content)
 end
 
 now = Time.now
