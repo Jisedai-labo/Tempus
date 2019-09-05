@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     @stats = language.zip(list_of_studytime).to_h
 
     7.times do |i|
-      temp = @posts.where(created_at: Time.current.ago(i.days).beginning_of_day..Time.current.ago(i.days).end_of_day).pluck(:language, :studytime).to_h
+      temp = @posts.where(created_at: Time.current.ago(i.days).all_day).pluck(:language, :studytime).to_h
       
       temp.each do |key, value|
         @stats[key][i] = value #ここで詰まってる
