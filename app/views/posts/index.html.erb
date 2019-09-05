@@ -7,7 +7,23 @@
     <p>Language: <%= post.language %></p>
     <p>Kyouzai: <%= post.kyouzai %></p>
     <p>Content: <%= post.content%></p>
-    <%= link_to "詳細", post_path(post) %>
-  </div>
-  <% end %>
+
+    <% if post.favorited_by?(current_user) %>
+      <li>
+        <%= link_to post_favorites_path(post), method: :delete do %>
+          <i class="fas fa-heart" aria-hidden="true" style="color: red"></i>
+          <%= post.favorites.count %> いいね
+        <% end %>
+      </li>
+    <% else %>
+      <li>
+        <%= link_to post_favorites_path(post), method: :post do %>
+          <i class="far fa-heart" aria-hidden="true"></i>
+          <%= post.favorites.count %> いいね
+        <% end %>
+      </li>
+    <% end %>
+        <%= link_to "詳細", post_path(post) %>
+      </div>
+      <% end %>
 </div>
