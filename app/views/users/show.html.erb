@@ -1,4 +1,6 @@
 <h1>User</h1>
+<p>Image</p>
+<%= attachment_image_tag @user, :image,class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg", size:"100x100"%>
 <p>Name</p>
 <%= @user.name%>
 <p>Username</p>
