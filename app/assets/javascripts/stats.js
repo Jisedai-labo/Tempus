@@ -2,6 +2,7 @@ $(document).on('turbolinks:load', function(){
     'use strict';
 
     var ctx = document.getElementById('stats').getContext('2d');
+    var language = gon.language;
     var stats = gon.stats;
     
     new Chart(ctx, {
@@ -12,60 +13,60 @@ $(document).on('turbolinks:load', function(){
     data: {
         labels: ["今日", "昨日", "2日前", "3日前", "4日前", "5日前", "6日前"],
         datasets: [
-            {label: "HTML/CSS",
+            {label: language[0],
             backgroundColor: 'midnightblue',
             borderColor: 'midnightblue',
-            data: stats["HTML/CSS"]},
+            data: stats[0]},
 
-            {label: "JavaScript",
+            {label: language[1],
                 backgroundColor: 'deeppink',
                 borderColor: 'deeppink',
-                data: stats["JavaScript"]},
+                data: stats[1]},
 
-            {label: "JavaScripライブラリ",
+            {label: language[2],
                 backgroundColor: 'royalblue',
                 borderColor: 'royalblue',
-                data: stats["JavaScripライブラリ"]},
+                data: stats[2]},
 
-            {label: "Ruby/Rails",
+            {label: language[3],
             backgroundColor: 'maroon',
             borderColor: 'maroon',
-            data: stats["Ruby/Rails"]},
+            data: stats[3]},
 
-            {label: "Python/Django",
+            {label: language[4],
                 backgroundColor: 'gold',
                 borderColor: 'gold',
-                data: stats["Python/Django"]},
+                data: stats[4]},
 
-            {label: "PHP",
+            {label: language[5],
             backgroundColor: 'cornflowerblue',
             borderColor: 'cornflowerblue',
-            data: stats["PHP"]},
+            data: stats[5]},
 
-            {label: "Swift/Kotlin/Flutter",
+            {label: language[6],
                 backgroundColor: 'darkorchid',
                 borderColor: 'darkorchid',
-                data: stats["Swift/Kotlin/Flutter"]},
+                data: stats[6]},
 
-            {label: "SQL",
+            {label: language[7],
             backgroundColor: 'gainsboro',
             borderColor: 'gainsboro',
-            data: stats["SQL"]},
+            data: stats[7]},
 
-            {label: "C/C++",
+            {label: language[8],
             backgroundColor: 'teal',
             borderColor: 'teal',
-            data: stats["C/C++"]},
+            data: stats[8]},
 
-            {label: "Java",
+            {label: language[9],
             backgroundColor: 'crimson',
             borderColor: 'crimson',
-            data: stats["Java"]},
+            data: stats[9]},
 
-            {label: "その他",
+            {label: language[10],
             backgroundColor: 'gray',
             borderColor: 'gray',
-            data: stats["その他"]},
+            data: stats[10]},
         ]
     },
 
