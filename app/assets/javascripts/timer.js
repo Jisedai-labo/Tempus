@@ -57,7 +57,7 @@ $(document).on('turbolinks:load', function(){
         isRunning = true;
         start.textContent = 'Stop';
         startTime = new Date();
-        countUp()
+        countUp();
       } else {
         // 動作している場合
         isRunning = false;
@@ -66,11 +66,11 @@ $(document).on('turbolinks:load', function(){
         
         if(startTime){
           stopTime = new Date();
-          studyTime += parseInt((stopTime - startTime) / 1000);
+          studyTime += parseInt((stopTime - startTime) / 60000);
           $('#post_studytime').val(studyTime); // 隠しパラメータとして勉強時間を渡す
         }
       }
     });
 
-  });
+});
   
