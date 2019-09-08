@@ -3,8 +3,8 @@ $(document).on('turbolinks:load', function(){
 
     var ctx = document.getElementById('stats').getContext('2d');
     var language = gon.language;
-    var stats = gon.stats;
-    
+    var studytime = gon.studytime;
+
     new Chart(ctx, {
     // 作成したいチャートのタイプ
     type: 'bar',
@@ -16,57 +16,57 @@ $(document).on('turbolinks:load', function(){
             {label: language[0],
             backgroundColor: 'midnightblue',
             borderColor: 'midnightblue',
-            data: stats[0]},
+            data: studytime[0]},
 
             {label: language[1],
                 backgroundColor: 'deeppink',
                 borderColor: 'deeppink',
-                data: stats[1]},
+                data: studytime[1]},
 
             {label: language[2],
                 backgroundColor: 'royalblue',
                 borderColor: 'royalblue',
-                data: stats[2]},
+                data: studytime[2]},
 
             {label: language[3],
-            backgroundColor: 'maroon',
-            borderColor: 'maroon',
-            data: stats[3]},
+                backgroundColor: 'maroon',
+                borderColor: 'maroon',
+                data: studytime[3]},
 
             {label: language[4],
                 backgroundColor: 'gold',
                 borderColor: 'gold',
-                data: stats[4]},
+                data: studytime[4]},
 
             {label: language[5],
-            backgroundColor: 'cornflowerblue',
-            borderColor: 'cornflowerblue',
-            data: stats[5]},
+                backgroundColor: 'cornflowerblue',
+                borderColor: 'cornflowerblue',
+                data: studytime[5]},
 
             {label: language[6],
                 backgroundColor: 'darkorchid',
                 borderColor: 'darkorchid',
-                data: stats[6]},
+                data: studytime[6]},
 
             {label: language[7],
-            backgroundColor: 'gainsboro',
-            borderColor: 'gainsboro',
-            data: stats[7]},
+                backgroundColor: 'gainsboro',
+                borderColor: 'gainsboro',
+                data: studytime[7]},
 
             {label: language[8],
-            backgroundColor: 'teal',
-            borderColor: 'teal',
-            data: stats[8]},
+                backgroundColor: 'teal',
+                borderColor: 'teal',
+                data: studytime[8]},
 
             {label: language[9],
-            backgroundColor: 'crimson',
-            borderColor: 'crimson',
-            data: stats[9]},
+                backgroundColor: 'crimson',
+                borderColor: 'crimson',
+                data: studytime[9]},
 
             {label: language[10],
-            backgroundColor: 'gray',
-            borderColor: 'gray',
-            data: stats[10]},
+                backgroundColor: 'gray',
+                borderColor: 'gray',
+                data: studytime[10]},
         ]
     },
 
