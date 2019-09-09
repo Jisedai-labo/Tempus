@@ -12,7 +12,7 @@ end
 
 User.create!(email: "xftpt.nonoka@gmail.com", password: "123456", name: "tomoya")
 
-test_user = User.find_by(email: "xftpt.nonoka@gmail.com")
+test_user = User.find_or_create_by(email: "xftpt.nonoka@gmail.com")
 
 Language.create!(language: "HTML/CSS")
 Language.create!(language: "JavaScript")
@@ -35,7 +35,7 @@ language = Language.all.pluck(:language)
 end
 
 21.times do |m|
-  Post.create!(user_id: test_user.id, studytime: m*60, language: language[m%4], kyouzai: kyouzai, content: content)
+  Post.create!(user_id: test_user.id, studytime: m*60, language: language[m%10], kyouzai: kyouzai, content: content)
 end
 
 now = Time.now

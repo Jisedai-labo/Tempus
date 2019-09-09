@@ -1,101 +1,109 @@
 $(document).on('turbolinks:load', function(){
     'use strict';
 
-    var ctx = document.getElementById('stats').getContext('2d');
-    var stats = gon.stats;
-    
-    new Chart(ctx, {
-    // 作成したいチャートのタイプ
-    type: 'bar',
+    function displayStats(){
+        var ctx = document.getElementById('stats').getContext('2d');
+        var language = gon.language;
+        var studytime = gon.studytime;
 
-    // データセットのデータ
-    data: {
-        labels: ["今日", "昨日", "2日前", "3日前", "4日前", "5日前", "6日前"],
-        datasets: [
-            {label: "HTML/CSS",
-            backgroundColor: 'midnightblue',
-            borderColor: 'midnightblue',
-            data: stats["HTML/CSS"]},
+        new Chart(ctx, {
+        // 作成したいチャートのタイプ
+        type: 'bar',
 
-            {label: "JavaScript",
-                backgroundColor: 'deeppink',
-                borderColor: 'deeppink',
-                data: stats["JavaScript"]},
+        // データセットのデータ
+        data: {
+            labels: ["今日", "昨日", "2日前", "3日前", "4日前", "5日前", "6日前"],
+            datasets: [
+                {label: language[0],
+                backgroundColor: 'midnightblue',
+                borderColor: 'midnightblue',
+                data: studytime[0]},
 
-            {label: "JavaScripライブラリ",
-                backgroundColor: 'royalblue',
-                borderColor: 'royalblue',
-                data: stats["JavaScripライブラリ"]},
+                {label: language[1],
+                    backgroundColor: 'deeppink',
+                    borderColor: 'deeppink',
+                    data: studytime[1]},
 
-            {label: "Ruby/Rails",
-            backgroundColor: 'maroon',
-            borderColor: 'maroon',
-            data: stats["Ruby/Rails"]},
+                {label: language[2],
+                    backgroundColor: 'royalblue',
+                    borderColor: 'royalblue',
+                    data: studytime[2]},
 
-            {label: "Python/Django",
-                backgroundColor: 'gold',
-                borderColor: 'gold',
-                data: stats["Python/Django"]},
+                {label: language[3],
+                    backgroundColor: 'maroon',
+                    borderColor: 'maroon',
+                    data: studytime[3]},
 
-            {label: "PHP",
-            backgroundColor: 'cornflowerblue',
-            borderColor: 'cornflowerblue',
-            data: stats["PHP"]},
+                {label: language[4],
+                    backgroundColor: 'gold',
+                    borderColor: 'gold',
+                    data: studytime[4]},
 
-            {label: "Swift/Kotlin/Flutter",
-                backgroundColor: 'darkorchid',
-                borderColor: 'darkorchid',
-                data: stats["Swift/Kotlin/Flutter"]},
+                {label: language[5],
+                    backgroundColor: 'cornflowerblue',
+                    borderColor: 'cornflowerblue',
+                    data: studytime[5]},
 
-            {label: "SQL",
-            backgroundColor: 'gainsboro',
-            borderColor: 'gainsboro',
-            data: stats["SQL"]},
+                {label: language[6],
+                    backgroundColor: 'darkorchid',
+                    borderColor: 'darkorchid',
+                    data: studytime[6]},
 
-            {label: "C/C++",
-            backgroundColor: 'teal',
-            borderColor: 'teal',
-            data: stats["C/C++"]},
+                {label: language[7],
+                    backgroundColor: 'gainsboro',
+                    borderColor: 'gainsboro',
+                    data: studytime[7]},
 
-            {label: "Java",
-            backgroundColor: 'crimson',
-            borderColor: 'crimson',
-            data: stats["Java"]},
+                {label: language[8],
+                    backgroundColor: 'teal',
+                    borderColor: 'teal',
+                    data: studytime[8]},
 
-            {label: "その他",
-            backgroundColor: 'gray',
-            borderColor: 'gray',
-            data: stats["その他"]},
-        ]
-    },
+                {label: language[9],
+                    backgroundColor: 'crimson',
+                    borderColor: 'crimson',
+                    data: studytime[9]},
 
-    // ここに設定オプションを書きます
-    options: {
-        title: {
-            display: true,
-            text: '1週間の勉強時間', //グラフの見出し
-            padding:3
+                {label: language[10],
+                    backgroundColor: 'gray',
+                    borderColor: 'gray',
+                    data: studytime[10]},
+            ]
         },
-        scales: {
-            xAxes: [{
-                  stacked: true, //積み上げ棒グラフにする設定
-                  categoryPercentage:0.4 //棒グラフの太さ
-            }],
-            yAxes: [{
-                  stacked: true //積み上げ棒グラフにする設定
-            }]
-        },
-        legend: {
-            labels: {
-                  boxWidth:30,
-                  padding:20 //凡例の各要素間の距離
+
+        // ここに設定オプションを書きます
+        options: {
+            title: {
+                display: true,
+                text: '1週間の勉強時間', //グラフの見出し
+                padding:3
             },
-            display: true
-        },
-        tooltips:{
-          mode:'label' //マウスオーバー時に表示されるtooltip
+            scales: {
+                xAxes: [{
+                    stacked: true, //積み上げ棒グラフにする設定
+                    categoryPercentage:0.4 //棒グラフの太さ
+                }],
+                yAxes: [{
+                    stacked: true //積み上げ棒グラフにする設定
+                }]
+            },
+            legend: {
+                labels: {
+                    boxWidth:30,
+                    padding:20 //凡例の各要素間の距離
+                },
+                display: true
+            },
+            tooltips:{
+            mode:'label' //マウスオーバー時に表示されるtooltip
+            }
         }
+        });
     }
-    });
 
+    if(document.getElementById('stats') != null){
+        displayStats();
+    }else{
+        return;
+    }
 });
