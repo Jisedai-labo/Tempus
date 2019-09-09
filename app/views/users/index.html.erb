@@ -1,24 +1,31 @@
-<h1>User</h1>
+<div class="users-index-container">
+    <h1 class="users-index">ユーザー一覧</h1>
 
-<table>
-<% @users.each do |user| %>
-<tr>
-<td>Picture</td>
-<td>Name</td>
-<td>Username</td>
-<td>Twitter Account</td>
-<td>github</td>
-<td>Biography</td>
-</tr>
-<tr>
-<%= attachment_image_tag user, :image, format: 'jpeg', size:"100x100" %>
-<td><%= user.name%></td>
-<td><%= user.username %></td>
-<td><%= user.twitter_account%></td>
-<td><%= user.github%></td>
-<td><%= user.biography %></td>
-</tr>
-<% end%>
-</table>
+    <div class="users-container">
+        <% @users.each do |user| %>
 
-<%= link_to "Edit" , edit_user_path(current_user)%>
+        <div class="user-icon">
+            <p><%= attachment_image_tag user, :image, format: 'jpeg', size:"100x100" %></p>
+        </div>
+
+        <div class="users-detail">
+            <ul>
+                <li>名前</li>
+                <li><%= user.name%></li>
+                <li>ユーザーネーム</li>
+                <li><%= user.username %></li>
+                <li>Twitterアカウント</li>
+                <li><%= user.twitter_account%></li>
+                <li>Github</li>
+                <li><%= user.github%></li>
+                <li>自己紹介</li>
+                <li><%= user.biography %></li>
+
+                <% if user.id == current_user.id %>
+                    <li><%= link_to "Edit" , edit_user_path(current_user)%></li>
+                <% end %>
+        <% end %>
+            </ul>
+        </div>
+    </div>
+</div>
