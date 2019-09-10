@@ -2,12 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.users-index-container{
-    width:700px;
-    margin-right: auto;
-    margin-left : auto;
-}
-
 li{
     list-style: none;
+}
+
+.users-index{
+    width: 700px;
+    margin-right: auto;
+    margin-left : auto;
+    background: -moz-linear-gradient(top, rgb(44, 100, 255), #FFF);
+    background: -webkit-linear-gradient(top, rgb(44, 100, 255), #FFF);
+    background: linear-gradient(to bottom, rgb(44, 100, 255), #FFF);
+    border-radius: 50px;
+    padding: 50px;
 }

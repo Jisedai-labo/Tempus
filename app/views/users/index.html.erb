@@ -1,7 +1,7 @@
-<div class="users-index-container">
-    <h1 class="users-index">ユーザー一覧</h1>
+<div class="index-container">
+    <h1>ユーザー一覧</h1>
 
-    <div class="users-container">
+    <div class="users-index">
         <% @users.each do |user| %>
 
         <div class="user-icon">
@@ -9,23 +9,26 @@
         </div>
 
         <div class="users-detail">
-            <ul>
-                <li>名前</li>
-                <li><%= user.name%></li>
-                <li>ユーザーネーム</li>
-                <li><%= user.username %></li>
-                <li>Twitterアカウント</li>
-                <li><%= user.twitter_account%></li>
-                <li>Github</li>
-                <li><%= user.github%></li>
-                <li>自己紹介</li>
-                <li><%= user.biography %></li>
+            <table>
+                <tr>
+                    <td><%= user.name %></td>
+                    <td><%= user.username %></td>
+                </tr>
+
+                <tr>
+                    <td>Twitter:<%= link_to user.twitter_account, "https://twitter.com/#{user.twitter_account}" %></td>
+                    <td>Github:<%= link_to user.github %></td>
+                </tr>
+
+                <tr>
+                    <td><%= user.biography %></td>
+                </tr>
 
                 <% if user.id == current_user.id %>
-                    <li><%= link_to "Edit" , edit_user_path(current_user)%></li>
+                    <th><%= link_to "Edit" , edit_user_path(current_user)%></th>
                 <% end %>
-        <% end %>
-            </ul>
+            </table>
         </div>
+        <% end %>
     </div>
 </div>
