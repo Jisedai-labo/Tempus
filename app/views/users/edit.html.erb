@@ -1,27 +1,44 @@
-<h1>User</h1>
-<%= form_for(@user) do |f| %>
+<div class="container">
+      <div class="sign_up_box">
+                  <div class="edit_content_box">
+                  <%= form_for(@user) do |f| %>
+                        <div class="edit_form_img">
+                              <%= attachment_image_tag @user, :image,class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg", size:"200x200"%>
+                        </div>
+                        <div class="img_select">
+                              <%= f.attachment_field :image, placeholder: "プロフィール画像", class: "user-edit-form" %>
+                        </div>
+                  <p class="za">Z-αntiphon</p>
+                  </div>
+                  <div class="edit_right_box">
+                        <div>
+                              <h4 class="txt_col">Name</h4>
+                              <%= f.text_field :name %>
+                        </div>
+                        <div>
+                              <h4 class="txt_col">Username</h4>
+                              <%= f.text_field :username %>
+                        </div>
+                        <div class="txt_col">
+                              <h4 class="txt_col">Twitter Account</h4>
+                              <%= f.text_field :twitter_account %>
+                        </div>
+                  </div>
+                  <div class="edit_left_box">
+                        <div>
+                              <h4 class="txt_col">GitHub</h4>
+                              <%= f.text_field :github %>
+                        </div>
+                        <div>
+                              <h4 class="txt_col">Biography</h4>
+                              <%= f.text_area :biography %>
+                        </div>
+                        <div class="update_btn">
+                              <%= f.submit 'UPDATE USER' %>
+                        </div>
+                  </div>
 
-      <h4>Image</h4>
-      <%= attachment_image_tag @user, :image,class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg", size:"30×30"%>
-      <%= f.attachment_field :image, placeholder: "プロフィール画像", class: "user-edit-form" %>
- 
-      <h4>Name</h4>
-      <%= f.text_field :name %>
- 
-      <h4>Username</h4>
-      <%= f.text_field :username %>
-
-      <h4>Twitter Account</h4>
-      <%= f.text_field :twitter_account %>
-
-      <h4>GitHub</h4>
-      <%= f.text_field :github %>
-
-      <h4>Biography</h4>
-      <%= f.text_area :biography %>
- 
-      <div>
-      <%= f.submit 'UPDATE USER' %>
+                  <% end%>
       </div>
 
-<% end%>
+</div>

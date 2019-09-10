@@ -44,3 +44,67 @@
  .post-contents{
      margin: 20px;
  }
+
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #6c6b6b;
+}
+a {
+text-decoration: none;
+}
+
+.clearfix::after {
+content:"";
+display:block;
+clear:both;
+}
+
+.container{
+    width: 100%;
+}
+
+.sign_up_box{
+    width: 50%;
+    height: 600px;
+    background: linear-gradient(180deg, #FFF, rgb(64, 129, 226)); 
+    margin: 50px auto;
+    border-radius: 20px;
+
+}
+
+
+.edit_content_box{
+    width: 200px;
+    padding-top: 100px;
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+}
+
+.za{
+    text-align: center;
+    font-size: 30px;
+    color: white;
+}
+
+.edit_right_box{
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+
+.edit_left_box{
+    width: 50%;
+    float: right;
+    text-align: center;
+}
+
+.txt_col{
+    color: #FFF;
+}
+
+.update_btn{
+    margin-top: 20px;
+}

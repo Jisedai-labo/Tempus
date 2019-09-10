@@ -10,22 +10,32 @@
   User.create!(email: "test#{n}@test.com", password: "1234567#{n}", name: "テスト#{n}")
 end
 
-
-language = "Rails"
-kyouzai = "Tutorial"
-content = "Good"
-
-30.times do |m|
-  Post.create!(user_id: m%10+1, studytime: m*60, language: language, kyouzai: kyouzai, content: content)
-end
-
 User.create!(email: "xftpt.nonoka@gmail.com", password: "123456", name: "tomoya")
 
 test_user = User.find_by(email: "xftpt.nonoka@gmail.com")
-sample_languages = ["Ruby", "Rails", "Python", "JavaScript"]
+
+Language.create!(language: "HTML/CSS")
+Language.create!(language: "JavaScript")
+Language.create!(language: "JavaScriptライブラリ")
+Language.create!(language: "Ruby/Rails")
+Language.create!(language: "Python/Django")
+Language.create!(language: "PHP")
+Language.create!(language: "Swift/Kotlin/Flutter")
+Language.create!(language: "SQL")
+Language.create!(language: "C/C++")
+Language.create!(language: "Java")
+Language.create!(language: "その他")
+
+kyouzai = "Tutorial"
+content = "Good"
+language = Language.all.pluck(:language)
+
+30.times do |m|
+  Post.create!(user_id: m%10+1, studytime: m*60, language: language[0], kyouzai: kyouzai, content: content)
+end
 
 21.times do |m|
-  Post.create!(user_id: test_user.id, studytime: m*60*10, language: sample_languages.sample, kyouzai: kyouzai, content: content)
+  Post.create!(user_id: test_user.id, studytime: m*60, language: language[m%4], kyouzai: kyouzai, content: content)
 end
 
 now = Time.now
