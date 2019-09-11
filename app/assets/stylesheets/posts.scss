@@ -1,3 +1,56 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.posts-index{
+    width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+    background: -moz-linear-gradient(top, rgb(44, 100, 255), #FFF);
+    background: -webkit-linear-gradient(top, rgb(44, 100, 255), #FFF);
+    background: linear-gradient(to bottom, rgb(44, 100, 255), #FFF);
+    border-radius: 50px;
+    padding: 50px;
+}
+
+.post-contents{
+    padding: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: rgb(123, 228, 102);
+    border-radius: 10px;
+}
+
+.minutes{
+    float: left;
+    width: 15%;
+    padding: 10px;
+    border-radius: 100%;
+    box-shadow: 3px 2px 0px 3px #fff;
+}
+
+.post-table{
+    margin: 10px;
+    width: 40%;
+}
+
+p{
+    text-align: center;
+}
+
+td{
+    color: rgb(17, 17, 17);
+}
+
+.link{
+    color: rgb(17, 17, 17);
+}
+
+a{
+    text-decoration: none;
+}
+
+.post-studytime{
+    color: white;
+    margin-top: 3px;
+}
