@@ -32,7 +32,7 @@ class UsersController < ApplicationController
       #ループの最後にその言語の1週間の勉強時間をlist_of_studytimeに入れる
       list_of_studytime[i] = temp_studytime
     end
-
+    
     gon.language = list_of_languages
     gon.studytime = list_of_studytime
   end
@@ -54,7 +54,7 @@ class UsersController < ApplicationController
 private
 
   def user_params
-    params.require(:user).permit(:name, :username, :twitter_account, :github, :biography)
+    params.require(:user).permit(:name, :username, :twitter_account, :github, :biography, :image)
   end
 
 end

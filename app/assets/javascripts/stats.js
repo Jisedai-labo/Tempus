@@ -14,11 +14,7 @@ $(document).on('turbolinks:load', function(){
         data: {
             labels: ["今日", "昨日", "2日前", "3日前", "4日前", "5日前", "6日前"],
             datasets: [
-<<<<<<< HEAD
-                {label: "Rails",
-=======
                 {label: language[0],
->>>>>>> master
                 backgroundColor: 'midnightblue',
                 borderColor: 'midnightblue',
                 data: studytime[0]},

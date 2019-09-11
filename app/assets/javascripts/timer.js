@@ -17,7 +17,7 @@ $(document).on('turbolinks:load', function(){
     // タイマーが動作しているかどうか
     var isRunning = false;
   
-    function updateTimer(t){
+    function updateTimer(studyTime){
       
       now = new Date();
       
@@ -51,25 +51,25 @@ $(document).on('turbolinks:load', function(){
   
     // startボタンの挙動
     start.addEventListener('click', function(){
-      // startを押した際にタイマーが動作している場合・していない場合で条件分岐
-      if (isRunning === false){
-        // 動作していない場合
-        isRunning = true;
-        start.textContent = 'Stop';
-        startTime = new Date();
-        countUp();
-      } else {
-        // 動作している場合
-        isRunning = false;
-        start.textContent = 'Start';
-        clearTimeout(timerId);
-        
-        if(startTime){
-          stopTime = new Date();
-          studyTime += parseInt((stopTime - startTime) / 60000);
-          $('#post_studytime').val(studyTime); // 隠しパラメータとして勉強時間を渡す
+        // startを押した際にタイマーが動作している場合・していない場合で条件分岐
+        if (isRunning === false){
+            // 動作していない場合
+            isRunning = true;
+            start.textContent = 'Stop';
+            startTime = new Date();
+            countUp();
+        } else {
+            // 動作している場合
+            isRunning = false;
+            start.textContent = 'Start';
+            clearTimeout(timerId);
+
+            if(startTime){
+                stopTime = new Date();
+                studyTime += parseInt((stopTime - startTime) / 1000);
+                $('#post_studytime').val(studyTime/60); // 隠しパラメータとして勉強時間を渡す
+              }
         }
-      }
     });
 
 });

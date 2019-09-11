@@ -38,7 +38,6 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'devise'
 gem 'bootstrap-sass'
-gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'mini_magick'
 gem 'ruby-debug-ide'
@@ -47,6 +46,7 @@ gem 'chart-js-rails', '~> 0.1.4'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
 gem 'gon'
+gem 'kaminari'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

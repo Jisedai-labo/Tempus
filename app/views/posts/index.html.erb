@@ -1,29 +1,27 @@
-<h1>Post</h1>
+<div class="index-container">
+    <h1>投稿一覧</h1>
 
-<div class="posts-index">
-  <% @posts.each do |post| %>
-  <div class="post-contents">
-    <p>Studytime: <%= "#{post.studytime/60}min." %>
-    <p>Language: <%= post.language %></p>
-    <p>Kyouzai: <%= post.kyouzai %></p>
-    <p>Content: <%= post.content%></p>
-
-    <% if post.favorited_by?(current_user) %>
-      <li>
-        <%= link_to post_favorites_path(post), method: :delete do %>
-          <i class="fas fa-heart" aria-hidden="true" style="color: red"></i>
-          <%= post.favorites.count %> いいね
+    <div class="posts-index">
+        <% @posts.each do |post| %>
+        <div class="post-contents">
+            <div class="minutes">
+                <p class="post-studytime"><%= post.studytime %><br>min</p>
+            </div>
+            <div class="post-table">
+                <%= link_to post.user.name, user_path(post.user), class: "link" %>
+                <%= link_to post_path(post) do %>
+                <table>
+                    <tr>
+                        <td>言語:<%= post.language %></td>
+                        <td>教材:<%= post.kyouzai %></td>
+                    </tr>
+                    <tr>
+                        <td><%= post.content%></td>
+                    </tr>
+                </table>
+                <% end %>
+            </div>
+        </div>
         <% end %>
-      </li>
-    <% else %>
-      <li>
-        <%= link_to post_favorites_path(post), method: :post do %>
-          <i class="far fa-heart" aria-hidden="true"></i>
-          <%= post.favorites.count %> いいね
-        <% end %>
-      </li>
-    <% end %>
-        <%= link_to "詳細", post_path(post) %>
-      </div>
-      <% end %>
+    </div>
 </div>
