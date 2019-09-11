@@ -8,7 +8,7 @@
                 <p class="post-studytime"><%= post.studytime %><br>min</p>
             </div>
             <div class="post-table">
-                <%= link_to post.user.name, user_path(post.user) %>
+                <%= link_to post.user.name, user_path(post.user), class: "link" %>
                 <%= link_to post_path(post) do %>
                 <table>
                     <tr>

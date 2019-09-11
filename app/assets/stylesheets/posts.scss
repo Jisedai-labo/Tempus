@@ -23,10 +23,10 @@
 
 .minutes{
     float: left;
-    padding: 10px 10px;
     width: 15%;
+    padding: 10px;
     border-radius: 100%;
-    box-shadow: inset 0 6px 0 rgba(250, 250, 0, 0.8), inset 6px 0 0 rgba(250, 200, 0, 0.8), inset 0 -6px 0 rgba(250, 150, 0, 0.8), inset -6px 0 0 rgba(250, 100, 0, 0.8);
+    box-shadow: 3px 2px 0px 3px #fff;
 }
 
 .post-table{
@@ -36,6 +36,18 @@
 
 p{
     text-align: center;
+}
+
+td{
+    color: rgb(17, 17, 17);
+}
+
+.link{
+    color: rgb(17, 17, 17);
+}
+
+a{
+    text-decoration: none;
 }
 
 .post-studytime{
