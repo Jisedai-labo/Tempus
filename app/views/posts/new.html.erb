@@ -5,7 +5,7 @@
 
   <div class="field">
     <%= f.label :language, "言語" %>
-    <%= f.text_area :language %>
+    <%= f.collection_select :language, Language.all, :language, :language %>
   </div>
   <div class="field">
     <%= f.label :kyouzai, "教材" %>
