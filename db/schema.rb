@@ -10,11 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_09_01_083511) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
     t.integer "post_id"
+=======
+ActiveRecord::Schema.define(version: 2019_09_03_092411) do
+
+  create_table "languages", force: :cascade do |t|
+    t.string "language"
+>>>>>>> a484b52bd96ebcb07c67ffa3b9eefb82f7f1cb69
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

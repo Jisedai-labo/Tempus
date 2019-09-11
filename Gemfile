@@ -54,6 +54,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem 'pry-byebug'
 end
 
 group :development do
