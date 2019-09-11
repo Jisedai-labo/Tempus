@@ -10,22 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2019_09_03_092411) do
-=======
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2019_09_01_083511) do
->>>>>>> master
+ActiveRecord::Schema.define(version: 2019_09_11_061549) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
     t.integer "post_id"
-=======
-ActiveRecord::Schema.define(version: 2019_09_03_092411) do
-
-  create_table "languages", force: :cascade do |t|
-    t.string "language"
->>>>>>> a484b52bd96ebcb07c67ffa3b9eefb82f7f1cb69
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -68,6 +57,18 @@ ActiveRecord::Schema.define(version: 2019_09_03_092411) do
     t.string "image_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "views", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_views_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_views_on_reset_password_token", unique: true
   end
 
 end
