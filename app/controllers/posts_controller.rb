@@ -11,6 +11,7 @@ before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def create
     @post = current_user.posts.new(post_params)
+    @post.icon = Language.find_by(language: params[:language]).icon
     if @post.save
       flash[:notice] = "投稿しました"
       redirect_to posts_path

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_11_061549) do
+ActiveRecord::Schema.define(version: 2019_09_11_162646) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2019_09_11_061549) do
     t.string "language"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "icon"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -33,6 +34,7 @@ ActiveRecord::Schema.define(version: 2019_09_11_061549) do
     t.string "kyouzai"
     t.integer "studytime"
     t.integer "user_id"
+    t.string "icon"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
