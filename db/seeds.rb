@@ -38,11 +38,11 @@ content = "Good"
 language = Language.all.pluck(:language)
 
 30.times do |m|
-  Post.create!(user_id: m%10+1, studytime: m*60, language: languages[0], kyouzai: kyouzai, content: content, icon: icons[0])
+  Post.create!(user_id: m%10+1, studytime: m*60, language_id: m%10+1, kyouzai: kyouzai, content: content)
 end
 
 21.times do |m|
-  Post.create!(user_id: test_user.id, studytime: m*60, language: languages[m%10], kyouzai: kyouzai, content: content, icon: icons[m%10])
+  Post.create!(user_id: test_user.id, studytime: m*60, language_id: m%10+1, kyouzai: kyouzai, content: content)
 end
 
 now = Time.now

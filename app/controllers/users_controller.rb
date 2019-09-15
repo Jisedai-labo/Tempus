@@ -25,7 +25,7 @@ class UsersController < ApplicationController
         #1日分の時間を変数にとる
         timerange = Time.current.ago(j.days).beginning_of_day..Time.current.ago(j.days).end_of_day
         #tempに言語・timerangeで絞り込んで得られた勉強時間を格納
-        temp = @posts.where(created_at: timerange, language: list_of_languages[i]).pluck(:studytime)
+        temp = @posts.where(created_at: timerange, language_id: i).pluck(:studytime)
 
         temp_studytime[j] = temp.sum
       end

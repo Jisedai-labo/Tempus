@@ -6,12 +6,11 @@ before_action :set_post, only: [:show, :edit, :update, :destroy]
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.page(params[:page]).per(20)
   end
 
   def create
     @post = current_user.posts.new(post_params)
-    @post.icon = Language.find_by(language: params[:language]).icon
     if @post.save
       flash[:notice] = "投稿しました"
       redirect_to posts_path
@@ -47,7 +46,7 @@ before_action :set_post, only: [:show, :edit, :update, :destroy]
     private
 
       def post_params
-        params.require(:post).permit(:language, :kyouzai, :content, :studytime)
+        params.require(:post).permit(:language_id, :kyouzai, :content, :studytime)
       end
 
       def set_post

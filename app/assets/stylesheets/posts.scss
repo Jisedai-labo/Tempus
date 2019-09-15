@@ -2,8 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.posts-index-title{
+    margin-top: 2%;
+    margin-left: 14%;
+    margin-bottom: 2%;
+}
+
 .posts-index{
-    width: 700px;
+    width: 80%;
     margin-right: auto;
     margin-left: auto;
     background: -moz-linear-gradient(top, rgb(44, 100, 255), #FFF);
@@ -14,24 +20,40 @@
 }
 
 .post-contents{
+    display: inline-block;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    width: 84%;
     padding: 50px;
-    margin-right: auto;
-    margin-left: auto;
     background-color: rgb(123, 228, 102);
     border-radius: 10px;
 }
 
+.index-container{
+    width: 100%;
+}
+
+.post-container{
+    width: 100%;
+}
+
 .minutes{
-    float: left;
-    width: 15%;
+    display: inline-table;
+    position: relative;
+    top: -2px;
+    width: 70px;
+    height: 70px;
     padding: 10px;
     border-radius: 100%;
     box-shadow: 3px 2px 0px 3px #fff;
 }
 
 .post-table{
-    margin: 10px;
-    width: 40%;
+    display: inline-table;
+    position: relative;
+    top: -10px;
+    left: 30px;
+    width: 80%;
 }
 
 p{
@@ -40,6 +62,10 @@ p{
 
 td{
     color: rgb(17, 17, 17);
+}
+
+.tr-comment{
+    width: 100%;
 }
 
 .link{
@@ -52,5 +78,43 @@ a{
 
 .post-studytime{
     color: white;
+    font-size: 11.5pt;
     margin-top: 3px;
+}
+
+.icon{
+    width: 90px;
+    height: 90px;
+    display: inline-block;
+    position: relative;
+    top: 25px;
+    background: white;
+    border-radius: 100%;
+    text-align: center;
+}
+
+i{
+    position: relative;
+    top: 10px;
+}
+
+.fa-html5{
+    position: relative;
+    top: 12px;
+}
+
+.fa-gem{
+    position: relative;
+    top: 13px;
+}
+
+.fa-vuejs{
+    position: relative;
+    top: 13px;
+}
+
+.fa-cuttlefish{
+    position: relative;
+    top: 11px;
+    left: -1px;
 }
