@@ -1,14 +1,12 @@
-<li id="micropost-<%= @post.id %>">
-  <%= #link_to 画像, @opost.user %>
-  <span class="user"><%= link_to @post.user.name, user_path(@post.user) %></span>
-  <span class="content">
+<div id="micropost-<%= @post.id %>">
+  <%= link_to @post.user.name, user_path(@post.user) %>
+  <div class="content">
     <%= @post.content %>
-    <%= #image_tag @post.picture.url if @post.picture? %>
-  </span>
-  <span class="timestamp">
-    Posted <%= #time_ago_in_words(@post.created_at) %> ago.
-    <% if current_user?(@post.user) %>
-    <%= link_to("delete", @post, method: :delete, data: { confirm: "You sure?" }) %>
+  </div>
+  <div class="timestamp">
+    <p>Posted <%= time_ago_in_words(@post.created_at) %> ago.</a>
+    <% if @post.user.id == current_user.id %>
+    <%= link_to "delete", @post, method: :delete %>
     <% end %>
-  </span>
-</li>
+  </div>
+</div>
