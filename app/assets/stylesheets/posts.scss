@@ -9,9 +9,15 @@
 }
 
 .posts-index{
+<<<<<<< HEAD
     width: 80%;
     margin-right: auto;
     margin-left: auto;
+=======
+    width: 100%;
+    height: 50%;
+    margin: 0 20px;
+>>>>>>> 37311522da73fe795f0a46ec864aecb106de5d3a
     background: -moz-linear-gradient(top, rgb(44, 100, 255), #FFF);
     background: -webkit-linear-gradient(top, rgb(44, 100, 255), #FFF);
     background: linear-gradient(to bottom, rgb(44, 100, 255), #FFF);
@@ -19,6 +25,7 @@
     padding: 50px;
 }
 
+<<<<<<< HEAD
 .post-contents{
     display: inline-block;
     margin-left: 30px;
@@ -29,6 +36,23 @@
     padding-right: 50px;
     padding-bottom: 40px;
     background-color: rgb(123, 228, 102);
+=======
+.img-box{
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+.posts-index-d{
+    width: 700px;
+    margin: 20px 20px;
+    background: -moz-linear-gradient(bottom, rgb(44, 100, 255), #FFF);
+    background: -webkit-linear-gradient(bottom, rgb(44, 100, 255), #FFF);
+    background: linear-gradient(to top, rgb(44, 100, 255), #FFF);
+    border-radius: 50px;
+    padding: 50px;
+    background-color: rgb(44, 100, 255);
+>>>>>>> 37311522da73fe795f0a46ec864aecb106de5d3a
     border-radius: 10px;
 }
 
@@ -41,12 +65,19 @@
 }
 
 .minutes{
+<<<<<<< HEAD
     display: inline-table;
     position: relative;
     top: -2px;
     width: 70px;
     height: 70px;
     padding: 10px;
+=======
+    float: left;
+    width: 18%;
+    padding: 30px;
+    margin-right: 20px;
+>>>>>>> 37311522da73fe795f0a46ec864aecb106de5d3a
     border-radius: 100%;
     box-shadow: 3px 2px 0px 3px #fff;
 }
@@ -57,10 +88,6 @@
     top: -10px;
     left: 30px;
     width: 80%;
-}
-
-p{
-    text-align: center;
 }
 
 td{
@@ -85,6 +112,7 @@ a{
     margin-top: 3px;
 }
 
+<<<<<<< HEAD
 .icon{
     width: 90px;
     height: 90px;
@@ -120,4 +148,24 @@ i{
     position: relative;
     top: 11px;
     left: -1px;
+=======
+.balloon{
+    position: relative;
+    padding: 20px;
+    height: 150px;
+    text-align: center;
+}
+
+.balloon::before{
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    left: -15px;
+    top: 20px;
+    border-right: 15px solid rgb(44, 100, 255);
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+>>>>>>> 37311522da73fe795f0a46ec864aecb106de5d3a
 }
