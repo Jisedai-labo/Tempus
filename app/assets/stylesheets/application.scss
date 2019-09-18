@@ -20,28 +20,34 @@ header{
     position: fixed;
 }
 
- .button-link{
+.button-link{
     color: #222222;
- }
 
- .container{
-     margin-top: 100px;
- }
+}
 
- #timer{
-     font-size: 36px;
-     margin: 20px;
- }
-
- .post-contents{
-     margin: 20px;
- }
-
- .index-container{
-     width: 100%;
- }
+.container{
+    margin-top: 100px;
+}
 
 #timer{
     font-size: 36px;
     margin: 20px;
+}
+
+.icon-html-css::before{
+   content: "\f13b";
+   font-family: "Font Awesome 5 Free";
+   font-weight: 400;
+}
+
+.container{
+    margin-top: 100px;
+}
+
+.post-contents{
+    margin: 20px;
+}
+
+.index-container{
+    width: 100%;
 }

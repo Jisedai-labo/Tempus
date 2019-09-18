@@ -1,27 +1,42 @@
 <div class="index-container">
-    <h1>投稿一覧</h1>
+    <div class="posts-index-title">
+        <h1>投稿一覧</h1>
+    </div>
 
     <div class="posts-index">
         <% @posts.each do |post| %>
+<<<<<<< HEAD
+        <div class="post-container">
+            <div class="icon">
+                <i class="<%= post.language.icon %>"></i>
+=======
         <div class="post-contents">
             <div class="minutes">
                 <p class="post-studytime"><%= post.studytime %><br>min</p>
+>>>>>>> 37311522da73fe795f0a46ec864aecb106de5d3a
             </div>
-            <div class="post-table">
-                <%= link_to post.user.name, user_path(post.user), class: "link" %>
-                <%= link_to post_path(post) do %>
-                <table>
-                    <tr>
-                        <td>言語:<%= post.language %></td>
-                        <td>教材:<%= post.kyouzai %></td>
-                    </tr>
-                    <tr>
-                        <td><%= post.content%></td>
-                    </tr>
-                </table>
-                <% end %>
+
+            <div class="post-contents">
+                <div class="minutes">
+                    <p class="post-studytime"><%= post.studytime %><br>min</p>
+                </div>
+
+                <div class="post-table">
+                    <%= link_to post.user.name, user_path(post.user), class: "link" %>
+                    <%= link_to post_path(post) do %>
+                        <table>
+                            <tr>
+                                <td><%= post.language.language %>&emsp;&emsp;<%= post.kyouzai %></td>
+                            </tr>
+                            <tr class="tr-comment">
+                                <td><%= post.content %></td>
+                            </tr>
+                        </table>
+                    <% end %>
+                </div>
             </div>
         </div>
         <% end %>
+        <%= paginate @posts %>
     </div>
 </div>
