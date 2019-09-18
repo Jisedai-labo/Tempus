@@ -4,7 +4,6 @@
     <div class="posts-index">
         <% @posts.each do |post| %>
         <div class="post-contents">
-            <div class="icon-<%= post.language.downcase.gsub(/\//, '-').delete('+') %> fa-5x"></div>
             <div class="minutes">
                 <p class="post-studytime"><%= post.studytime %><br>min</p>
             </div>

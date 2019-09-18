@@ -19,94 +19,29 @@
 header{
     position: fixed;
 }
- 
-.header-right{
-    float: right;
-}
 
-.button-link{
+ .button-link{
     color: #222222;
-}
+ }
 
-.container{
-    margin-top: 100px;
-}
+ .container{
+     margin-top: 100px;
+ }
+
+ #timer{
+     font-size: 36px;
+     margin: 20px;
+ }
+
+ .post-contents{
+     margin: 20px;
+ }
+
+ .index-container{
+     width: 100%;
+ }
 
 #timer{
     font-size: 36px;
     margin: 20px;
-}
-
-.post-contents{
-    margin: 20px;
-}
-
-.index-container{
-    width: 100%;
-}
-
-.icon-html-css::before{
-   content: "\f13b";
-   font-family: "Font Awesome 5 Free";
-   font-weight: 400;
-}
-
-.icon-javascript::before{
-    content: "\f3b9";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 400;
-}
-
-.icon-javascriptライブラリ::before{
-    content: "\f41f";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 400;
-}
-
-.icon-ruby-rails::before{
-    content: "\f3a5";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-}
-
-.icon-python-django::before{
-    content: "\f3e2";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 400;
-}
-
-.icon-php::before{
-    content: "\f457";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 400;
-}
-
-.icon-swift-kotlin-flutter::before{
-    content: "\f3cd";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 400;
-}
-
-.icon-sql::before{
-    content: "\f1c0";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-}
-
-.icon-c-c::before{
-    content: "\f38c";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 400;
-}
-
-.icon-java::before{
-    content: "\f4e4";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 400;
-}
-
-.icon-その他::before{
-    content: "\f109";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
 }

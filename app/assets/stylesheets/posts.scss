@@ -3,9 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .posts-index{
-    width: 700px;
-    margin-right: auto;
-    margin-left: auto;
+    width: 100%;
+    height: 50%;
+    margin: 0 20px;
     background: -moz-linear-gradient(top, rgb(44, 100, 255), #FFF);
     background: -webkit-linear-gradient(top, rgb(44, 100, 255), #FFF);
     background: linear-gradient(to bottom, rgb(44, 100, 255), #FFF);
@@ -13,18 +13,29 @@
     padding: 50px;
 }
 
-.post-contents{
+.img-box{
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+.posts-index-d{
+    width: 700px;
+    margin: 20px 20px;
+    background: -moz-linear-gradient(bottom, rgb(44, 100, 255), #FFF);
+    background: -webkit-linear-gradient(bottom, rgb(44, 100, 255), #FFF);
+    background: linear-gradient(to top, rgb(44, 100, 255), #FFF);
+    border-radius: 50px;
     padding: 50px;
-    margin-right: auto;
-    margin-left: auto;
-    background-color: rgb(123, 228, 102);
+    background-color: rgb(44, 100, 255);
     border-radius: 10px;
 }
 
 .minutes{
     float: left;
-    width: 15%;
-    padding: 10px;
+    width: 18%;
+    padding: 30px;
+    margin-right: 20px;
     border-radius: 100%;
     box-shadow: 3px 2px 0px 3px #fff;
 }
@@ -32,10 +43,6 @@
 .post-table{
     margin: 10px;
     width: 40%;
-}
-
-p{
-    text-align: center;
 }
 
 td{
@@ -53,4 +60,24 @@ a{
 .post-studytime{
     color: white;
     margin-top: 3px;
+}
+
+.balloon{
+    position: relative;
+    padding: 20px;
+    height: 150px;
+    text-align: center;
+}
+
+.balloon::before{
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    left: -15px;
+    top: 20px;
+    border-right: 15px solid rgb(44, 100, 255);
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
 }

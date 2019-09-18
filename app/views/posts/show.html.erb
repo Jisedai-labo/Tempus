@@ -1,12 +1,58 @@
-<div id="micropost-<%= @post.id %>">
-  <%= link_to @post.user.name, user_path(@post.user) %>
-  <div class="content">
-    <%= @post.content %>
+  <div class="container-fluid">
+  
+    <div class="row">
+      <div class="col-md-3 posts-index">
+        <h2> User info</h2>
+        <div class="user_info">
+            <p>Name : <%= link_to @post.user.name, user_path(@post.user) %></p>
+            <p>Username : <%= @post.user.username%></p>
+            <p>TwitterAccount : <%= @post.user.twitter_account%></p>
+            <p>Github : <%= @post.user.github%></p>
+            <p>Biography : <%= @post.user.biography%></p>
+            <div class="img-box">
+              <%= attachment_image_tag @post.user, :image,class: "img-circle pull-left profile-thumb", format: 'jpeg', size:"150x150" %>
+            </div>
+        </div>
+      </div>
+
+      <div class="col-md-8 posts-index">
+        <div>
+            <h1>Stats</h1>
+            <canvas id="stats" width="500" height="200"></canvas>
+            </div>
+        </div>
+
   </div>
-  <div class="timestamp">
-    <p>Posted <%= time_ago_in_words(@post.created_at) %> ago.</a>
-    <% if @post.user.id == current_user.id %>
-    <%= link_to "delete", @post, method: :delete %>
-    <% end %>
+
+
+
+  <div class="row">
+
+  <div class="col-md-3 posts-index-d">
+          <p><i class="far fa-clock"></i>Time : <%= @post.studytime%></p>
+          <p><i class="fas fa-globe"></i>Language : <%= @post.language%></p>
+          <p><i class="fas fa-book"></i>Kyouzai : <%= @post.kyouzai%></p>
+          <p><i class="fas fa-comment"></i>Comment : <%= @post.content%></p>
+
+      <div class="timestamp">
+        <p>Posted <%= time_ago_in_words(@post.created_at) %> ago.</a>
+        <% if @post.user.id == current_user.id %>
+        <%= link_to "delete", @post, method: :delete %>
+        <% end %>
+      </div>
   </div>
+  
+
+  <div class="col-md-8 posts-index-d">
+  <h2> My Posts</h2>
+    <div class="post-contents balloon">
+            <div class="minutes">
+                <p class="post-studytime"><%= @post.studytime %><br>min</p>
+            </div>
+            <div class="post-table">
+                <%= @post.content%>
+            </div>
+        </div>
+  </div>
+
 </div>
