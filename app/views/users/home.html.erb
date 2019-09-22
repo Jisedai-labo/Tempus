@@ -1,25 +1,20 @@
 <div class="container">
-    <div><h1>
-    Tempus
-    </h1></div>
+    <div class="start_container">
+            <div class="start_btn spin cercle">
+                <h1>Start</h1>
+            </div>
 
-    <div>
-    <p>Tempusは次世代ラボのメンバーが学習時間を報告・管理するためのwebアプリです</p>
-    </div>
-
-    <% if current_user != nil %>
-    <div><%= link_to current_user.email, user_path(current_user) %>はログイン中</div>
-    <% end %>
-    
-    <div>
-    <%= link_to "登録", new_user_registration_path %>
-    </div>
-
-    <div>
-    <%= link_to "ログイン", new_user_session_path   %>
-    </div>
-    
-    <div>
-    <%= link_to "投稿一覧", posts_path %>
+            <div class="use_container">
+                <div class="use_info">
+                    <h1>How to use</h1>
+                    
+                    <p>①　<strong>Start</strong>ボタンをクリックして<span class="color">勉強開始！</span></p>
+                    <!-- 投稿ページのスクショ -->
+                    <p>②　勉強が終わったら、言語やコメントを添えて投稿しよう！</p>
+                    <p>→　例：　言語：Rails 教材：チュートリアル コメント：バリデーションが難しかった。明日復習して完全に理解したい。</p>
+                    <p>③　みんなで学習時間を共有して、お互いのモチベーションを高め合おう！</p>
+                    <!-- (投稿一覧ページのスクショ) -->
+                </div>
+        </div>
     </div>
 </div>

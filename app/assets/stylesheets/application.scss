@@ -51,3 +51,161 @@ header{
 .index-container{
     width: 100%;
 }
+
+*{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.clearfix::after{
+    content:"";
+    display:block;
+    clear: both;
+
+}
+
+header{
+	width: 100%;
+	height: 120px;
+	padding: 15px;
+	background: linear-gradient(to right,#EFFBF2,#0B610B);
+}
+
+.header-logo{
+	float: left;
+}
+
+#header-logo{
+	width: 200px;
+	height: 70px;
+	border-radius: 10%;
+}
+
+.header-item{
+	color: white;
+	padding-top: 30px;
+    padding-right: 50px;
+    cursor: pointer;
+	float: right;
+}
+
+.header-logo h2{
+	line-height: 120px;
+}
+
+.header-usericon{
+	width:70px;
+    height: 70px;
+    background-color:#ffffff;
+	border-radius: 50%;
+	margin-right: 20px;
+	margin-top: 10px;
+	float:right;
+}
+
+.start_container{
+    
+    width: 100%;
+   margin: 100px 30px;
+}
+
+.start_btn{
+    width: 200px;
+    height: 100px;
+    background-color: rgba(245, 81, 81, 0.404);
+    border-radius: 20px;
+    margin: 0 auto;
+
+   
+}
+
+.start_btn :hover{
+    cursor: pointer;
+}
+
+.start_btn h1{
+    padding: 25px;
+    text-align: center;
+}
+ 
+.use_info{
+    width: 100%;
+    margin: 0 auto;
+    border:solid 3px #000000;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.use_info h1{
+    text-align: center;
+}
+
+
+.use_info p{
+    font-size:20px;
+    padding-top:15px;
+}
+
+footer{
+    position: absolute;
+    width: 100%;
+	height: 60px;
+    position: absolute;
+    bottom:0;
+	background: linear-gradient(to right,#EFFBF2,#0B610B); 
+}
+
+footer p{
+    line-height: 60px;
+    text-align: center;
+}
+
+html{
+	font-family: sans-serif;
+}
+
+.sign_up{
+	width: 500px;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 60px;
+}
+
+.header{
+	background-color: #6495ed;
+	height:60px;
+	border-radius: 5px;
+}
+
+.image{
+	border-radius: 50%;
+	margin-top: 15px;
+}
+
+.body{
+	height: 500px;
+	background-image: linear-gradient(#f0f8ff, #1e90ff);
+	border-radius: 5px;
+	padding-top: 70px;
+}
+
+.form{
+	padding-top: 120px;
+	padding-bottom: 100px;
+}
+
+.text{
+	width: 70%;
+	padding: 15px;
+	font-size: 20px;
+	border-radius: 5px;
+}
+
+.signupbtn{
+	margin:60px  auto;
+	width:60%;
+	font-size: 25px;
+	border-radius: 5px;
+	padding: 15px;
+}
