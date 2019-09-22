@@ -16,9 +16,23 @@
 
 @import "bootstrap";
 
-header{
-    position: fixed;
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
 }
+a {
+text-decoration: none;
+color: #ffffff;
+}
+
+.clearfix::after {
+content:"";
+display:block;
+clear:both;
+}
+
+
 
 .button-link{
     color: #222222;
@@ -67,7 +81,8 @@ header{
 
 header{
 	width: 100%;
-	height: 120px;
+    height: 120px;
+    margin: 10px 0;
 	padding: 15px;
 	background: linear-gradient(to right,#EFFBF2,#0B610B);
 }
@@ -148,10 +163,8 @@ header{
 }
 
 footer{
-    position: absolute;
     width: 100%;
 	height: 60px;
-    position: absolute;
     bottom:0;
 	background: linear-gradient(to right,#EFFBF2,#0B610B); 
 }
@@ -208,4 +221,17 @@ html{
 	font-size: 25px;
 	border-radius: 5px;
 	padding: 15px;
+}
+
+// nav
+
+.header-list{
+    list-style: none;
+}
+.header-list li{
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 30px;
+    color: #ffffff;
+    font-size: 30px;
 }
