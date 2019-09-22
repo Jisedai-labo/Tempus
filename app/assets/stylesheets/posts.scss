@@ -2,10 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.posts-index-title{
+    margin-top: 2%;
+    margin-left: 14%;
+    margin-bottom: 2%;
+}
+
 .posts-index{
-    width: 700px;
-    margin-right: auto;
-    margin-left: auto;
+    width: 100%;
+    height: 50%;
+    margin: 0 20px;
     background: -moz-linear-gradient(top, rgb(44, 100, 255), #FFF);
     background: -webkit-linear-gradient(top, rgb(44, 100, 255), #FFF);
     background: linear-gradient(to bottom, rgb(44, 100, 255), #FFF);
@@ -14,32 +20,68 @@
 }
 
 .post-contents{
-    padding: 50px;
-    margin-right: auto;
-    margin-left: auto;
+    display: inline-block;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    width: 84%;
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 40px;
     background-color: rgb(123, 228, 102);
+}
+
+.img-box{
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+.posts-index-d{
+    width: 700px;
+    margin: 20px 20px;
+    background: -moz-linear-gradient(bottom, rgb(44, 100, 255), #FFF);
+    background: -webkit-linear-gradient(bottom, rgb(44, 100, 255), #FFF);
+    background: linear-gradient(to top, rgb(44, 100, 255), #FFF);
+    border-radius: 50px;
+    padding: 50px;
+    background-color: rgb(44, 100, 255);
     border-radius: 10px;
 }
 
+.index-container{
+    width: 100%;
+}
+
+.post-container{
+    width: 100%;
+}
+
 .minutes{
-    float: left;
-    width: 15%;
+    display: inline-table;
+    position: relative;
+    top: -2px;
+    width: 70px;
+    height: 70px;
     padding: 10px;
     border-radius: 100%;
     box-shadow: 3px 2px 0px 3px #fff;
 }
 
 .post-table{
-    margin: 10px;
-    width: 40%;
-}
-
-p{
-    text-align: center;
+    display: inline-table;
+    position: relative;
+    top: -10px;
+    left: 30px;
+    width: 80%;
 }
 
 td{
     color: rgb(17, 17, 17);
+}
+
+.tr-comment{
+    width: 100%;
 }
 
 .link{
@@ -52,5 +94,63 @@ a{
 
 .post-studytime{
     color: white;
+    font-size: 11.5pt;
     margin-top: 3px;
+}
+
+.icon{
+    width: 90px;
+    height: 90px;
+    display: inline-block;
+    position: relative;
+    top: 25px;
+    background: white;
+    border-radius: 100%;
+    text-align: center;
+}
+
+i{
+    position: relative;
+    top: 10px;
+}
+
+.fa-html5{
+    position: relative;
+    top: 12px;
+}
+
+.fa-gem{
+    position: relative;
+    top: 13px;
+}
+
+.fa-vuejs{
+    position: relative;
+    top: 13px;
+}
+
+.fa-cuttlefish{
+    position: relative;
+    top: 11px;
+    left: -1px;
+}
+
+.balloon{
+    position: relative;
+    padding: 20px;
+    height: 150px;
+    text-align: center;
+}
+
+.balloon::before{
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    left: -15px;
+    top: 20px;
+    border-right: 15px solid rgb(44, 100, 255);
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
 }
