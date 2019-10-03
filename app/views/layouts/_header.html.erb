@@ -1,20 +1,24 @@
 <header>
     <div class="clearfix">
         <div class="header-logo">
-            <a href="https://jisedailabo.asakatsu-pg.com/"><img src="tempus/Tempus/app/assets/images/logo.png" id="header-logo"></a>
+            <%= link_to root_url do %>
+                <%= image_tag "logo.png", width:"350px", height:"100px" %>
+            <% end %>
         </div>
         <nav class="header-item">
-        <% if user_signed_in?%>
+        <% if user_signed_in? %>
             <ul class="header-list">
-                <li><%= link_to "MyPage", user_path(current_user) %></li>
-                <li><%= link_to "logout", destroy_user_session_path , method: :delete%></li>
+                <li><%= link_to "ユーザー一覧", users_path %></li>
+                <li><%= link_to "投稿一覧", posts_path %></li>
+                <li><%= link_to "マイページ", user_path(current_user) %></li>
+                <li><%= link_to "ログアウト", destroy_user_session_path , method: :delete%></li>
             </ul>
-        <%else%>
+        <% else %>
             <ul class="header-list">
-                <li><%= link_to "sign_up", new_user_registration_path %></li>
-                <li><%= link_to "login", new_user_session_path %></li>
+                <li><%= link_to "登録", new_user_registration_path %></li>
+                <li><%= link_to "ログイン", new_user_session_path %></li>
             </ul>
-        <%end%>
+        <% end %>
         </nav>
     </div>
 </header>

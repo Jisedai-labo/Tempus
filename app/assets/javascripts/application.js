@@ -17,4 +17,5 @@
 //= require jquery.turbolinks
 //= require turbolinks
 //= require Chart.min
+//= require bootstrap
 //= require_tree .

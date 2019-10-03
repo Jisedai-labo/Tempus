@@ -1,50 +1,91 @@
-<h1>User</h1>
-<p>Image</p>
-<%= attachment_image_tag @user, :image,class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg", size:"100x100"%>
-<p>Name</p>
-<%= @user.name%>
-<p>Username</p>
-<%= @user.username%>
-<p>Twitter Account</p>
-<%= @user.twitter_account %>
-<p>github</p>
-<%= @user.github%>
-<p>Biography</p>
-<%= @user.biography %>
- 
-<div>
-<h1>Stats</h1>
-<canvas id="stats" width="500" height="200"></canvas>
-</div>
+<div class="users-information-container">
+    <div class="user-information-and-stats">
+        <div class="user-information">
+            <%= attachment_image_tag @user, :image,class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg", size:"100x100" %>
+                <table class="user-information-table">
+                    <tr>
+                        <td><%= @user.name %></td>
+                    </tr>
+                    <tr>
+                        <% if @user.twitter_account %>
+                            <td>Twitter Account:<%= link_to @user.twitter_account, "https://twitter.com/#{@user.twitter_account}" %></td>
+                        <% end %>
+                    </tr>
+                    <tr>
+                        <% if @user.github %>
+                            <td>Github:<%= link_to @user.github, "https://github.com/#{@user.github}" %></td>
+                        <% end %>
+                    </tr>
+                    <tr>
+                        <td><%= @user.biography %></td>
+                    </tr>
+                </table>
+            <% if @user.id == current_user.id %>
+                <%= link_to "編集", edit_user_path(@user) %>
+            <% end %>
+        </div>
+        
+        <div class="users-stats">
+            <canvas id="stats" width="700px" height="350px"></canvas>
+        </div>
+    </div>
 
-<div>
-<h2>投稿一覧</h2>
-<div class="posts-index">
-  <% @posts.each do |post| %>
-  <div class="post-contents">
-    <p>Studytime: <%= "#{post.studytime}min." %>
-    <p>Language: <%= post.language %></p>
-    <p>Kyouzai: <%= post.kyouzai %></p>
-    <p>Content: <%= post.content%></p>
-        <% if post.user_id == current_user.id %>
-          <%= link_to "編集", edit_post_path(post) %>
-          <%= link_to "削除", post, method: :delete %>
-        <% end %>
-  </div>
-  <% end %>
-</div>
+    <div class="post-cotainer">
+        <div class="post-form">
+            <div id="timer">00h00m00s</div>
+            <button id="start" class="btn start-button" type="button">Start</button>
+            <%= form_with model: @post, local: true do |f| %>
 
-<div>
-<%= link_to "勉強開始！", new_post_path %>
-</div>
+            <div class="field">
+                <%= f.label :language, "言語" %><br>
+                <%= f.collection_select :language_id, Language.all, :id, :language %>
+            </div>
+            <div class="field">
+                <%= f.label :kyouzai, "教材" %><br>
+                <%= f.text_area :kyouzai %>
+            </div>
+            <div class="field">
+                <%= f.label :comment, "コメント" %><br>
+                <%= f.text_area :content %>
+            </div>
+        
+        
+            <%= f.hidden_field :studytime, :value => 0 %>
+                <%= f.submit "投稿", class: "btn submit-button", type: "button" %>
+            <% end %>
+        </div>
 
-<div>
-<%= link_to "Index" , users_path %>
-</div>
+        <div class="posts-index-in-users-show">
+        <% @posts.each do |post| %>
 
-<div> 
-<%= link_to "Edit" , edit_user_path(current_user)%>
-</div>
+            <div class="post-container">
+                <div class="icon-in-users-show">
+                    <i class="<%= post.language.icon %>"></i>
+                </div>
+
+                <div class="post-contents-in-users-show">
+                    <div class="minutes">
+                        <p class="post-studytime"><%= post.studytime %><br>min</p>
+                    </div>
+
+                    <div class="post-table">
+                        <%= link_to post.user.name, user_path(post.user), class: "link" %>
+                        <%= link_to post_path(post) do %>
+                            <table>    
+                                <tr>
+                                    <td><%= post.language.language %>&emsp;&emsp;<%= post.kyouzai %></td>
+                                </tr>
+                                <tr class="tr-comment">
+                                    <td><%= post.content %></td>
+                                </tr>
+                            </table>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+            <% end %>
+        </div>
+    </div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
