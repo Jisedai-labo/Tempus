@@ -1,0 +1,35 @@
+li {
+  list-style: none;
+}
+
+.users-index {
+  width: 700px;
+  margin-right: auto;
+  margin-left: auto;
+  background: -moz-linear-gradient(top, #2c64ff, #FFF);
+  background: -webkit-linear-gradient(top, #2c64ff, #FFF);
+  background: linear-gradient(to bottom, #2c64ff, #FFF);
+  border-radius: 50px;
+  padding: 50px;
+}
+
+.signup-content {
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  background: -moz-linear-gradient(top, #2c64ff, #2c64ff, #FFF);
+  background: -webkit-linear-gradient(top, #2c64ff, #2c64ff, #FFF);
+  background: linear-gradient(to bottom, #2c64ff, #2c64ff, #FFF);
+  border-radius: 10px;
+}
+
+.signin-content {
+  width: 400px;
+  height: 300px;
+  margin: 0 auto;
+  text-align: center;
+  background: -moz-linear-gradient(top, #2c64ff, #2c64ff, #FFF);
+  background: -webkit-linear-gradient(top, #2c64ff, #2c64ff, #FFF);
+  background: linear-gradient(to bottom, #2c64ff, #2c64ff, #FFF);
+  border-radius: 10px;
+}
