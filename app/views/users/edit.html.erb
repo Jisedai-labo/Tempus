@@ -2,7 +2,7 @@
 <%= form_for(@user) do |f| %>
 
       <h4>Image</h4>
-      <%= attachment_image_tag @user, :image,class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg", size:"30×30"%>
+      <%= attachment_image_tag @user, :image,class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg", size:"30x30"%>
       <%= f.attachment_field :image, placeholder: "プロフィール画像", class: "user-edit-form" %>
  
       <h4>Name</h4>

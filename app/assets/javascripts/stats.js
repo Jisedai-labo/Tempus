@@ -5,6 +5,7 @@ $(document).on('turbolinks:load', function(){
         var ctx = document.getElementById('stats').getContext('2d');
         var language = gon.language;
         var studytime = gon.studytime;
+        // var colors = ['midnightblue', 'deeppink', 'royalblue', 'maroon', 'gold', 'cornflowerblue', 'darkorchid', 'gainsboro', 'teal', 'crimson', 'gray'];
 
         new Chart(ctx, {
         // 作成したいチャートのタイプ
@@ -95,7 +96,10 @@ $(document).on('turbolinks:load', function(){
                 display: true
             },
             tooltips:{
-            mode:'label' //マウスオーバー時に表示されるtooltip
+                mode:'label', //マウスオーバー時に表示されるtooltip
+                filter: function(data){
+                    return (data.yLabel > 0);
+                }
             }
         }
         });

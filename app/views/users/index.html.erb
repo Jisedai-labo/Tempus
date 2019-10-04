@@ -11,13 +11,19 @@
         <div class="users-detail">
             <table>
                 <tr>
-                    <td><%= user.name %></td>
-                    <td><%= user.username %></td>
+                    <td><%= link_to user.name, user_path(user) %></td>
                 </tr>
 
                 <tr>
-                    <td>Twitter:<%= link_to user.twitter_account, "https://twitter.com/#{user.twitter_account}" %></td>
-                    <td>Github:<%= link_to user.github %></td>
+                    <% if user.twitter_account %>
+                        <td>Twitter Account:<%= link_to user.twitter_account, "https://twitter.com/#{user.twitter_account}" %></td>
+                    <% end %>
+                </tr>
+
+                <tr>
+                    <% if user.github %>
+                        <td>Github:<%= link_to user.github, "https://github.com/#{user.github}" %></td>
+                    <% end %>
                 </tr>
 
                 <tr>
