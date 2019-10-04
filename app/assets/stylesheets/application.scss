@@ -82,7 +82,7 @@ clear:both;
 header{
 	width: 100%;
     height: 120px;
-    margin-top: 10px;
+    margin: 10px 0;
 	padding: 15px;
 	background: linear-gradient(to right,#EFFBF2,#0B610B);
 }
@@ -165,8 +165,7 @@ header{
 footer{
     width: 100%;
 	height: 60px;
-    bottom: 10px;
-    position: fixed;
+    bottom:0;
 	background: linear-gradient(to right,#EFFBF2,#0B610B); 
 }
 
@@ -236,4 +235,3 @@ html{
     color: #ffffff;
     font-size: 30px;
 }
-
