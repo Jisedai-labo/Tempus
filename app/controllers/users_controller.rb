@@ -7,12 +7,13 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @users = User.page(params[:page]).per(20)
   end
 
   def show
     @user = User.find(params[:id])
     @posts = @user.posts
+    @post = Post.new
     list_of_languages = Language.all.pluck(:language) #言語一覧
     #大きさ11の配列=>これに言語ごとの勉強時間の配列(1週間分)を入れていく
     list_of_studytime = Array.new(list_of_languages.size)

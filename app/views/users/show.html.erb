@@ -40,18 +40,19 @@
                 <%= f.label :language, "言語" %><br>
                 <%= f.collection_select :language_id, Language.all, :id, :language %>
             </div>
+            
             <div class="field">
                 <%= f.label :kyouzai, "教材" %><br>
                 <%= f.text_area :kyouzai %>
             </div>
+
             <div class="field">
                 <%= f.label :comment, "コメント" %><br>
                 <%= f.text_area :content %>
             </div>
         
-        
             <%= f.hidden_field :studytime, :value => 0 %>
-                <%= f.submit "投稿", class: "btn submit-button", type: "button" %>
+            <%= f.submit "投稿", class: "btn submit-button", type: "button" %>
             <% end %>
         </div>
 

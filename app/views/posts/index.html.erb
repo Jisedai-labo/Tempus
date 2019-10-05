@@ -14,7 +14,7 @@
 
                     <div class="post-table">
                         <%= link_to post.user.name, user_path(post.user), class: "link" %>
-                        <%= link_to post_path(post) do %>
+                        <!-- <%= link_to post_path(post) do %> -->
                             <table>
                                 <tr>
                                     <td><%= post.language.language %>&emsp;&emsp;<%= post.kyouzai %></td>
@@ -23,7 +23,7 @@
                                     <td><%= post.content %></td>
                                 </tr>
                             </table>
-                        <% end %>
+                        <!-- <% end %> -->
                     </div>
                 </div>
             </div>
