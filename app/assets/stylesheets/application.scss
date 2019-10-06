@@ -178,8 +178,8 @@ footer{
     width: 100%;
 	height: 60px;
     margin-top: auto;
-    bottom: 10px;
-    position: fixed;
+    position: relative;
+    bottom: 0;
 	background: linear-gradient(to right,#EFFBF2,#0B610B); 
 }
 
@@ -384,6 +384,10 @@ li{
     background: linear-gradient(to bottom, rgb(44, 100, 255), rgb(44, 100, 255), #FFF);
     border-radius: 50px;
     padding: 50px;
+
+    td{
+        color: white;
+    }
 }
 
 // users#show
@@ -655,4 +659,11 @@ a{
     border-right: 15px solid rgb(44, 100, 255);
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
+}
+
+.sign-in-container{
+    background: -moz-linear-gradient(top, rgb(44, 100, 255), rgb(44, 100, 255), #FFF);
+    background: -webkit-linear-gradient(top, rgb(44, 100, 255), rgb(44, 100, 255), #FFF);
+    background: linear-gradient(to bottom, rgb(44, 100, 255), rgb(44, 100, 255), #FFF);
+    border-radius: 50px;
 }

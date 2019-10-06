@@ -31,30 +31,32 @@
     </div>
 
     <div class="post-cotainer">
-        <div class="post-form">
-            <div id="timer">00h00m00s</div>
-            <button id="start" class="btn start-button" type="button">Start</button>
-            <%= form_with model: @post, local: true do |f| %>
+        <% if @user == current_user %>
+            <div class="post-form">
+                <div id="timer">00h00m00s</div>
+                <button id="start" class="btn start-button" type="button">Start</button>
+                <%= form_with model: @post, url: posts_path, local: true do |f| %>
 
-            <div class="field">
-                <%= f.label :language, "言語" %><br>
-                <%= f.collection_select :language_id, Language.all, :id, :language %>
-            </div>
+                <div class="field">
+                    <%= f.label :language, "言語" %><br>
+                    <%= f.collection_select :language_id, Language.all, :id, :language %>
+                </div>
+                
+                <div class="field">
+                    <%= f.label :kyouzai, "教材" %><br>
+                    <%= f.text_area :kyouzai %>
+                </div>
+
+                <div class="field">
+                    <%= f.label :comment, "コメント" %><br>
+                    <%= f.text_area :content %>
+                </div>
             
-            <div class="field">
-                <%= f.label :kyouzai, "教材" %><br>
-                <%= f.text_area :kyouzai %>
+                <%= f.hidden_field :studytime, :value => 0 %>
+                <%= f.submit "投稿", class: "btn submit-button", type: "button" %>
+                <% end %>
             </div>
-
-            <div class="field">
-                <%= f.label :comment, "コメント" %><br>
-                <%= f.text_area :content %>
-            </div>
-        
-            <%= f.hidden_field :studytime, :value => 0 %>
-            <%= f.submit "投稿", class: "btn submit-button", type: "button" %>
-            <% end %>
-        </div>
+        <% end %>
 
         <div class="posts-index-in-users-show">
         <% @posts.each do |post| %>
