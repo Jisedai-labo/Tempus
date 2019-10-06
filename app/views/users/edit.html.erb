@@ -1,27 +1,26 @@
-<h1>User</h1>
-<%= form_for(@user) do |f| %>
+<div class="edit-container">
+    <h1>ユーザー編集</h1>
+    <%= form_for(@user) do |f| %>
 
-      <h4>Image</h4>
-      <%= attachment_image_tag @user, :image,class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg", size:"30x30"%>
-      <%= f.attachment_field :image, placeholder: "プロフィール画像", class: "user-edit-form" %>
- 
-      <h4>Name</h4>
-      <%= f.text_field :name %>
- 
-      <h4>Username</h4>
-      <%= f.text_field :username %>
+        <p>画像</p>
+        <%= attachment_image_tag @user, :image,class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg", size:"30x30"%>
+        <%= f.attachment_field :image, placeholder: "プロフィール画像", class: "user-edit-form" %>
+    
+        <%= f.label :name, "名前" %><br />
+        <%= f.text_field :name %><br />
 
-      <h4>Twitter Account</h4>
-      <%= f.text_field :twitter_account %>
+        <%= f.label :twitter_account, "Twitterアカウント" %><br />
+        <%= f.text_field :twitter_account %><br />
 
-      <h4>GitHub</h4>
-      <%= f.text_field :github %>
+        <%= f.label :github, "Githubアカウント" %><br />
+        <%= f.text_field :github %><br />
 
-      <h4>Biography</h4>
-      <%= f.text_area :biography %>
- 
-      <div>
-      <%= f.submit 'UPDATE USER' %>
-      </div>
+        <%= f.label :biography, "自己紹介" %><br />
+        <%= f.text_area :biography %><br />
+    
+        <div>
+        <%= f.submit "更新", class:"btn button" %>
+        </div>
 
-<% end%>
+    <% end %>
+</div>

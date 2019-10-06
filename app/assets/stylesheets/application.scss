@@ -10,10 +10,8 @@
 * files in this directory. Styles in this file should be added after the last require_* statement.
 * It is generally better to create a new file per style scope.
 *
-*= require_tree .
-*= require_self
 */
-
+// Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 
 .wrapper{
@@ -46,13 +44,8 @@ label{
     color: #222222;
 }
 
-.container{
-    margin-top: 100px;
-    width: 100%;
-}
-
 #timer{
-    font-size: 36px;
+    font-size: 26pt;
     margin: 10px;
     position: relative;
     right: 8%;
@@ -71,7 +64,6 @@ label{
 
 .container{
     width: 100%;
-    margin-top: 100px;
 }
 
 .post-contents{
@@ -162,26 +154,32 @@ header{
 
 .use-info{
     width: 100%;
-    margin: 0 auto;
+    margin: 40px auto;
     border:solid 3px #000000;
     padding: 30px;
     border-radius: 20px;
 }
 
-.use_info h1{
+.use-info h1{
     text-align: center;
 }
 
 
-.use_info p{
+.use-info p{
     font-size:20px;
     padding-top:15px;
+}
+
+.how-to-use{
+    overflow: hidden;
 }
 
 footer{
     width: 100%;
 	height: 60px;
     margin-top: auto;
+    position: relative;
+    bottom: 0;
 	background: linear-gradient(to right,#EFFBF2,#0B610B); 
 }
 
@@ -205,11 +203,6 @@ html{
 	background-color: #6495ed;
 	height:60px;
 	border-radius: 5px;
-}
-
-.image{
-	border-radius: 50%;
-	margin-top: 15px;
 }
 
 .body{
@@ -270,15 +263,21 @@ html{
 }
 
 // pagination
-.pagination{
+.pagination a{
     color: black;
+    text-decoration: none;
+}
+
+.page a{
+    color: black;
+    text-decoration: none;
 }
 
 // icon
 
 .icon-in-users-show{
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
     display: inline-block;
     position: relative;
     top: 43px;
@@ -289,7 +288,7 @@ html{
 
 i{
     position: relative;
-    top: 10px;
+    top: 8px;
 }
 
 .fa-html5{
@@ -313,24 +312,404 @@ i{
     left: -1px;
 }
 
+.fa-python{
+    position: relative;
+    top: 11px;
+}
+
+.fa-php{
+    position: relative;
+    top: 11px;
+}
+
+.fa-mobile-alt{
+    position: relative;
+    top: 11px;
+}
+
+// image
+
 .ship-image{
     width: 100%;
     top: 0;
     left: 0;
 }
 
+.timer-sample{
+    width: 40%;
+    position: relative;
+    left: 20%;
+}
+
 .sample-image{
-    width: 100%;
+    width: 80%;
 }
 
 .posts-index-sample-image{
-    width: 100%;
+    width: 80%;
 }
 
 .image{
     display: block;
+    text-align: center;
+}
+
+.timer-sample-image{
+    display: inline-flex;
+    float: right;
 }
 
 .introduction{
     font-size: 20pt;
+}
+
+.intro-image{
+    margin-bottom: 40px;
+}
+
+// users.scss
+
+li{
+    list-style: none;
+}
+
+.users-index{
+    width: 700px;
+    margin-right: auto;
+    margin-left : auto;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    background: -moz-linear-gradient(top, rgb(44, 100, 255), rgb(44, 100, 255), #FFF);
+    background: -webkit-linear-gradient(top, rgb(44, 100, 255), rgb(44, 100, 255), #FFF);
+    background: linear-gradient(to bottom, rgb(44, 100, 255), rgb(44, 100, 255), #FFF);
+    border-radius: 50px;
+    padding: 50px;
+
+    td{
+        color: white;
+    }
+}
+
+// users#show
+
+.users-information-container{
+    width: 100%;
+}
+
+.user-information-table{
+    margin: 20px;
+
+    td{
+        padding: 3px;
+        color: white;
+    }
+}
+
+.user-information{
+    width: 30%;
+    padding: 30px 40px;
+    margin: 10px 40px 20px 40px;
+    vertical-align: top;
+    display: inline-block;
+    position: relative;
+    top: 0;
+    left: 0;
+    background: -moz-linear-gradient(top,  #FFF, rgb(44, 100, 255), rgb(44, 100, 255));
+    background: -webkit-linear-gradient(top, #FFF, rgb(44, 100, 255), rgb(44, 100, 255));
+    background: linear-gradient(to bottom, #FFF, rgb(44, 100, 255), rgb(44, 100, 255));
+    border-radius: 20px;
+}
+
+.attachment{
+    margin: 15px;
+}
+
+.users-stats{
+    vertical-align: top;
+    display: inline-block;
+    position: relative;
+    top: 20px;
+    padding: 0;
+    margin-left: 4%;
+}
+
+.user-information-and-stats{
+    display: inline-block;    
+    width: 100%;
+    margin: 30px 0;
+}
+
+.post-container-in-users-show{
+    width: 100%;
+    display: inline-block;
+}
+
+.post-form{
+    display: inline-block;
+    width: 15%;
+    vertical-align: top;
+    margin: 0px 20px 20px 40px;
+    padding: 20px;
+    background: -moz-linear-gradient(top, rgb(44, 100, 255), rgb(44, 100, 255), #FFF);
+    background: -webkit-linear-gradient(top, rgb(44, 100, 255), rgb(44, 100, 255), #FFF);
+    background: linear-gradient(to bottom, rgb(44, 100, 255), rgb(44, 100, 255), #FFF);
+    border-radius: 20px;
+}
+
+.users-posts-container{
+    display: inline-block;
+    width: 80%;
+}
+
+.posts-index-in-users-show{
+    float: right;
+    width: 70%;
+    height: 50%;
+    margin-right: 100px;
+    margin-bottom: 40px;
+    background: -moz-linear-gradient(top, rgb(44, 100, 255), rgb(44, 100, 255), #FFF);
+    background: -webkit-linear-gradient(top, rgb(44, 100, 255), rgb(44, 100, 255), #FFF);
+    background: linear-gradient(to bottom, rgb(44, 100, 255), rgb(44, 100, 255), #FFF);
+    border-radius: 50px;
+    padding: 50px;
+}
+
+.post-contents-in-users-show{
+    float: right;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    width: 80%;
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 40px;
+    background-color: rgb(123, 228, 102);
+
+    td{
+        color: black;
+    }
+}
+
+.post-and-form-container{
+    width: 100%;
+}
+
+button[type="button"]:hover{
+    text-decoration: none;
+    color: #FFF;
+}
+
+input[type="button"]:hover{
+    text-decoration: none;
+    color: #FFF;
+}
+
+.start-button{
+    margin-bottom: 15px;
+}
+
+.submit-button{
+    margin-left: 59%;
+}
+
+.button{
+    display: inline-block;
+    font-weight: bold;
+	text-decoration: none;
+	color: #FFF;
+	text-shadow: 0 0 5px rgba(255, 255, 255, 0.0);
+	background: #1A237E;
+	transition: .4s;
+	border-radius: 4px;
+}
+
+.button:hover{
+    text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83), 6px 0px 15px rgba(255, 255, 240, 0.83);
+	transition: .4s;
+}
+
+label{
+    text-align: center;
+}
+
+.edit{
+    font-weight: normal;
+}
+
+// posts.scss
+
+.posts-index-title{
+    margin-top: 2%;
+    margin-left: 14%;
+    margin-bottom: 2%;
+}
+
+.img-box{
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+.posts-index{
+    width: 80%;
+    height: 50%;
+    margin-left: 10%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background: -moz-linear-gradient(top, rgb(44, 100, 255), rgb(44, 100, 255), #FFF);
+    background: -webkit-linear-gradient(top, rgb(44, 100, 255), rgb(44, 100, 255), #FFF);
+    background: linear-gradient(to bottom, rgb(44, 100, 255), rgb(44, 100, 255), #FFF);
+    border-radius: 50px;
+    padding: 50px;
+}
+
+.index-container{
+    width: 100%;
+}
+
+.post-container{
+    width: 100%;
+    display: inline-block;
+
+    td{
+        color: black;
+    }
+}
+
+.minutes{
+    display: inline-table;
+    position: relative;
+    top: -4px;
+    width: 70px;
+    height: 70px;
+    // padding: 10px;
+    border-radius: 100%;
+    box-shadow: 3px 2px 0px 3px #fff;
+}
+
+.post-table{
+    display: inline-table;
+    position: relative;
+    top: -10px;
+    left: 30px;
+    width: 80%;
+}
+
+td{
+    color: rgb(17, 17, 17);
+}
+
+.tr-comment{
+    width: 100%;
+}
+
+.link{
+    color: rgb(17, 17, 17);
+}
+
+a{
+    text-decoration: none;
+}
+
+.post-studytime{
+    position: relative;
+    top: 8px;
+    color: white;
+    text-align: center;
+    font-size: 11.5pt;
+    margin-top: 3px;
+}
+
+.icon{
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    position: relative;
+    top: 55px;
+    background: white;
+    border-radius: 100%;
+    text-align: center;
+}
+
+.balloon{
+    position: relative;
+    padding: 20px;
+    height: 150px;
+    text-align: center;
+}
+
+.balloon::before{
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    left: -15px;
+    top: 20px;
+    border-right: 15px solid rgb(44, 100, 255);
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+}
+
+// ログインページ
+
+.devise-container{
+    width: 30%;
+    text-align: center;
+    margin: 50px auto;
+    padding: 40px;
+    background: -moz-linear-gradient(top, rgb(44, 100, 255), rgb(44, 100, 255), #FFF);
+    background: -webkit-linear-gradient(top, rgb(44, 100, 255), rgb(44, 100, 255), #FFF);
+    background: linear-gradient(to bottom, rgb(44, 100, 255), rgb(44, 100, 255), #FFF);
+    border-radius: 50px;
+
+    h2{
+        color: white;
+    }
+}
+
+.signup-button{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+em{
+    color: white;
+}
+
+h4{
+    color: white;
+}
+
+p{
+    color: white;
+}
+
+.user-edit-form{
+    color: white;
+}
+
+.edit-container{
+    width: 30%;
+    text-align: center;
+    margin: 50px auto;
+    padding: 40px;
+    background: -moz-linear-gradient(top, rgb(44, 100, 255), rgb(44, 100, 255), #FFF);
+    background: -webkit-linear-gradient(top, rgb(44, 100, 255), rgb(44, 100, 255), #FFF);
+    background: linear-gradient(to bottom, rgb(44, 100, 255), rgb(44, 100, 255), #FFF);
+    border-radius: 50px;
+
+    h1{
+        color: white;
+    }
+}
+
+.signup-comment{
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.login-comment{
+    margin-top: 10px;
+    margin-bottom: -10px;
 }

@@ -18,4 +18,6 @@
 //= require turbolinks
 //= require Chart.min
 //= require bootstrap
+//= require popper
+//= require bootstrap-sprockets
 //= require_tree .

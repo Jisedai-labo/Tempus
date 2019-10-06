@@ -168,3 +168,26 @@ input[type="button"]:hover{
 label{
     text-align: center;
 }
+
+// devise_view
+
+.signup-content{
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    background: -moz-linear-gradient(top, rgb(44, 100, 255), rgb(44, 100, 255), #FFF);
+    background: -webkit-linear-gradient(top, rgb(44, 100, 255), rgb(44, 100, 255), #FFF);
+    background: linear-gradient(to bottom, rgb(44, 100, 255), rgb(44, 100, 255), #FFF);
+    border-radius: 10px;
+}
+
+.signin-content{
+    width: 400px;
+    height: 300px;
+    margin: 0 auto;
+    text-align: center;
+    background: -moz-linear-gradient(top, rgb(44, 100, 255), rgb(44, 100, 255), #FFF);
+    background: -webkit-linear-gradient(top, rgb(44, 100, 255), rgb(44, 100, 255), #FFF);
+    background: linear-gradient(to bottom, rgb(44, 100, 255), rgb(44, 100, 255), #FFF);
+    border-radius: 10px;
+}

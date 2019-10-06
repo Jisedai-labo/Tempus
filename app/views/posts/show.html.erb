@@ -29,10 +29,10 @@
   <div class="row">
 
   <div class="col-md-3 posts-index-d">
-          <p><i class="far fa-clock"></i>Time : <%= @post.studytime%></p>
-          <p><i class="fas fa-globe"></i>Language : <%= @post.language%></p>
-          <p><i class="fas fa-book"></i>Kyouzai : <%= @post.kyouzai%></p>
-          <p><i class="fas fa-comment"></i>Comment : <%= @post.content%></p>
+          <p><i class="far fa-clock"></i>Time : <%= @post.studytime %></p>
+          <p><i class="fas fa-globe"></i>Language : <%= @post.language.language %></p>
+          <p><i class="fas fa-book"></i>Kyouzai : <%= @post.kyouzai %></p>
+          <p><i class="fas fa-comment"></i>Comment : <%= @post.content %></p>
 
       <div class="timestamp">
         <p>Posted <%= time_ago_in_words(@post.created_at) %> ago.</a>
