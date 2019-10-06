@@ -34,7 +34,7 @@
         <% if @user == current_user %>
             <div class="post-form">
                 <div id="timer">00h00m00s</div>
-                <button id="start" class="btn start-button" type="button">Start</button>
+                <button id="start" class="btn button start-button" type="button">Start</button>
                 <%= form_with model: @post, url: posts_path, local: true do |f| %>
 
                 <div class="field">
@@ -53,7 +53,7 @@
                 </div>
             
                 <%= f.hidden_field :studytime, :value => 0 %>
-                <%= f.submit "投稿", class: "btn submit-button", type: "button" %>
+                <%= f.submit "投稿", class: "btn button submit-button" %>
                 <% end %>
             </div>
         <% end %>
@@ -73,7 +73,7 @@
 
                     <div class="post-table">
                         <%= link_to post.user.name, user_path(post.user), class: "link" %>
-                        <%= link_to post_path(post) do %>
+                        <!-- <%= link_to post_path(post) do %> -->
                             <table>    
                                 <tr>
                                     <td><%= post.language.language %>&emsp;&emsp;<%= post.kyouzai %></td>
@@ -81,8 +81,14 @@
                                 <tr class="tr-comment">
                                     <td><%= post.content %></td>
                                 </tr>
+                                <% if post.user == current_user %>
+                                    <tr>
+                                        <!-- <td><%= link_to "編集", edit_post_path(post) %></td> -->
+                                        <td><%= link_to "削除", post_path(post), method: :delete %>
+                                    </tr>
+                                <% end %>
                             </table>
-                        <% end %>
+                        <!-- <% end %> -->
                     </div>
                 </div>
             </div>

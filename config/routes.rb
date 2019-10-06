@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => {
-    :registrations => "users/regisrations",
+    :registrations => "users/registrations",
     :sessions => "users/sessions"
   }
 
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :index, :edit, :update]  do
     resource :posts, only: [:create]
   end
-  resources :posts, only: [:new, :create, :edit, :update, :destroy, :show, :index] do
+  resources :posts, only: [:create, :edit, :update, :destroy, :index] do
     resource :favorites, only: [:create, :destroy]
   end
 end

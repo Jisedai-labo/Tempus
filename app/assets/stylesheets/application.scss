@@ -506,23 +506,13 @@ input[type="button"]:hover{
 
 .start-button{
     margin-bottom: 15px;
-    display: inline-block;
-    font-weight: bold;
-	text-decoration: none;
-	color: #FFF;
-	text-shadow: 0 0 5px rgba(255, 255, 255, 0.0);
-	background: #1A237E;
-	transition: .4s;
-    border-radius: 4px;
-}
-
-.start-button:hover{
-    text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83), 6px 0px 15px rgba(255, 255, 240, 0.83);
-	transition: .4s;
 }
 
 .submit-button{
     margin-left: 59%;
+}
+
+.button{
     display: inline-block;
     font-weight: bold;
 	text-decoration: none;
@@ -533,7 +523,7 @@ input[type="button"]:hover{
 	border-radius: 4px;
 }
 
-.submit-button:hover{
+.button:hover{
     text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83), 6px 0px 15px rgba(255, 255, 240, 0.83);
 	transition: .4s;
 }
@@ -661,9 +651,65 @@ a{
     border-bottom: 15px solid transparent;
 }
 
-.sign-in-container{
+// ログインページ
+
+.devise-container{
+    width: 30%;
+    text-align: center;
+    margin: 50px auto;
+    padding: 40px;
     background: -moz-linear-gradient(top, rgb(44, 100, 255), rgb(44, 100, 255), #FFF);
     background: -webkit-linear-gradient(top, rgb(44, 100, 255), rgb(44, 100, 255), #FFF);
     background: linear-gradient(to bottom, rgb(44, 100, 255), rgb(44, 100, 255), #FFF);
     border-radius: 50px;
+
+    h2{
+        color: white;
+    }
+}
+
+.signup-button{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+em{
+    color: white;
+}
+
+h4{
+    color: white;
+}
+
+p{
+    color: white;
+}
+
+.user-edit-form{
+    color: white;
+}
+
+.edit-container{
+    width: 30%;
+    text-align: center;
+    margin: 50px auto;
+    padding: 40px;
+    background: -moz-linear-gradient(top, rgb(44, 100, 255), rgb(44, 100, 255), #FFF);
+    background: -webkit-linear-gradient(top, rgb(44, 100, 255), rgb(44, 100, 255), #FFF);
+    background: linear-gradient(to bottom, rgb(44, 100, 255), rgb(44, 100, 255), #FFF);
+    border-radius: 50px;
+
+    h1{
+        color: white;
+    }
+}
+
+.signup-comment{
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.login-comment{
+    margin-top: 10px;
+    margin-bottom: -10px;
 }
